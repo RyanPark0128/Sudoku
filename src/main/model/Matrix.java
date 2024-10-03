@@ -78,18 +78,21 @@ public class Matrix {
         return true;
     }
 
-
-
-
-
-
     public void printMatrix() {
         System.out.println();
+        System.out.println("- - - - - - - - - - - - -");
         for (int i=0; i<m.size(); i++) {
+            System.out.print("| ");
             for (int j=0; j< m.get(i).size(); j++) {
                 System.out.print(m.get(i).get(j).getValue() + " ");
+                if (j % 3 == 2) {
+                    System.out.print("| ");
+                }
             }
             System.out.println();
+            if (i % 3 == 2) {
+                System.out.println("- - - - - - - - - - - - -");
+            }
         }
         System.out.println();
     }
