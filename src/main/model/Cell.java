@@ -14,6 +14,11 @@ public class Cell {
         visible = false;
     }
 
+    public Cell(int value) {
+        this.value = value;
+        visible = false;
+    }
+
     public int getValue() {
         return value;
     }
@@ -27,6 +32,6 @@ public class Cell {
     }
 
     public void setVisible(boolean value) {
-        this.visible = false;
+        this.visible = value;
     }
 }

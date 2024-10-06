@@ -17,7 +17,7 @@ public class Matrix {
     public Matrix() {
         list = new ArrayList<>();
         gameboard = new ArrayList<List<Cell>>();
-        
+
         for (int i = 0; i < 9; i++) {
             gameboard.add(new ArrayList<Cell>());
             list.add(i+1);
@@ -28,12 +28,11 @@ public class Matrix {
                 gameboard.get(i).add(new Cell());
             }
         }
-        generateMatrix(0, 0);
     }
 
 
     /*
-     * REQUIRES: 0 <= row <= 9, 0 <= col <= 9
+     * REQUIRES: 0 <= row <= 9, 0 <= col <= 9, first call to the method must be row == col == 0;
      * MODIFIES: this
      * EFFECTS: Populates matrix recursively, make validation before assigning value
      */
@@ -91,6 +90,19 @@ public class Matrix {
         }
 
         return true;
+    }
+
+    public List<List<Cell>> getGameboard() {
+        return gameboard;
+    }
+
+
+    public int getCellValue(int row, int col) {
+        return gameboard.get(row).get(col).getValue();
+    }
+    
+    public void setCellValue(int row, int col, int value) {
+        gameboard.get(row).get(col).setValue(value);
     }
 
      /*
