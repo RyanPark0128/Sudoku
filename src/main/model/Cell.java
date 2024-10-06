@@ -3,7 +3,7 @@ package model;
 
 // Represents each cell in the sudoku gameboard.
 public class Cell {
-    private boolean visible; // will make the cell show/hide the value it has
+    private boolean isGiven; // will make the cell show/hide the value it has
     private int value; // represents the vallue it has.
     
     /*
@@ -11,27 +11,28 @@ public class Cell {
      */
     public Cell() {
         value = 0;
-        visible = false;
+        isGiven = false;
     }
 
     public Cell(int value) {
         this.value = value;
-        visible = false;
+        isGiven = false;
     }
 
     public int getValue() {
         return value;
     }
+    
 
     public void setValue(int value) {
         this.value = value;
     }
 
-    public boolean getVisible() {
-        return visible;
+    public boolean isGiven() {
+        return isGiven;
     }
 
-    public void setVisible(boolean value) {
-        this.visible = value;
+    public void setIsGiven(boolean value) {
+        this.isGiven = value;
     }
 }

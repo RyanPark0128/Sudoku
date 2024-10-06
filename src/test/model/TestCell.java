@@ -17,7 +17,7 @@ public class TestCell {
     @Test
     void testConstructor() {
         assertEquals(0, testCell.getValue());
-        assertEquals(false, testCell.getVisible());
+        assertEquals(false, testCell.isGiven());
     }
 
     @Test
@@ -27,11 +27,12 @@ public class TestCell {
         assertEquals(9, testCell.getValue());
     }
 
+
     @Test
     void testSetVisible() {
-        assertEquals(false, testCell.getVisible());
-        testCell.setVisible(true);
-        assertEquals(true, testCell.getVisible());
+        assertEquals(false, testCell.isGiven());
+        testCell.setIsGiven(true);
+        assertEquals(true, testCell.isGiven());
     }
 }
 

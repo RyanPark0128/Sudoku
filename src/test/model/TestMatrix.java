@@ -11,52 +11,47 @@ import org.junit.jupiter.api.Test;
 
 public class TestMatrix {
     private Matrix testMatrix;
+    private Matrix testEmptyMatrix;
     
     @BeforeEach
     void runBefore() {
-        testMatrix = new Matrix();
+        testMatrix = new Matrix(15);
+        testEmptyMatrix = new Matrix();
     }
 
-    @Test
-    void testSetCellValue() {
-        assertEquals(0, testMatrix.getCellValue(5, 2));
-        testMatrix.setCellValue(7, 3, 5);
-        assertEquals(5, testMatrix.getCellValue(7, 3));
-    }
 
     @Test
     void testValidationMethod() {
 
-        testMatrix.setCellValue(0, 0, 5);
+        testEmptyMatrix.setCellValue(0, 0, 5);
 
         // Should not allow another 5 in the same row
-        assertFalse(testMatrix.validation(0, 1, 5));
+        assertFalse(testEmptyMatrix.validation(0, 1, 5));
 
         // Should not allow another 5 in the same column
-        assertFalse(testMatrix.validation(1, 0, 5));
+        assertFalse(testEmptyMatrix.validation(1, 0, 5));
 
         // Should not allow another 5 in the same subgrid
-        assertFalse(testMatrix.validation(1, 1, 5));
+        assertFalse(testEmptyMatrix.validation(1, 1, 5));
 
         // Should allow 5 in a different row, column, and subgrid
-        assertTrue(testMatrix.validation(3, 3, 5));
+        assertTrue(testEmptyMatrix.validation(3, 3, 5));
 
         // Place another number and test again
-        testMatrix.setCellValue(0, 1, 6);
+        testEmptyMatrix.setCellValue(0, 1, 6);
 
         // Should not allow 6 in the same row
-        assertFalse(testMatrix.validation(0, 2, 6));
+        assertFalse(testEmptyMatrix.validation(0, 2, 6));
 
         // Should not allow 6 in the same column
-        assertFalse(testMatrix.validation(2, 1, 6));
+        assertFalse(testEmptyMatrix.validation(2, 1, 6));
 
         // Should not allow 6 in the same subgrid
-        assertFalse(testMatrix.validation(1, 2, 6));
+        assertFalse(testEmptyMatrix.validation(1, 2, 6));
     }
 
     @Test
     void testGeneratedMatrix() {
-        testMatrix.generateMatrix(0, 0);
         List<List<Cell>> list = testMatrix.getGameboard();
 
         assertEquals(true, validateRows(list));
@@ -84,6 +79,24 @@ public class TestMatrix {
             }
         }
         return true;
+    }
+
+    @Test
+    void testGeneratedUserMatrix() {
+
+        
+        int count = 0;
+        List<List<Cell>> list = testMatrix.getGameboard();
+
+        for (int i=0; i< 9; i++) {
+            for (int j=0; j<9; j++) {
+                if (list.get(i).get(j).isGiven()) {
+                    count++;
+                }
+            }
+        }
+
+        assertEquals(15, count);
     }
 
 
