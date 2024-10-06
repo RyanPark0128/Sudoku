@@ -100,7 +100,7 @@ public class Matrix {
     public int getCellValue(int row, int col) {
         return gameboard.get(row).get(col).getValue();
     }
-    
+
     public void setCellValue(int row, int col, int value) {
         gameboard.get(row).get(col).setValue(value);
     }
@@ -131,7 +131,7 @@ public class Matrix {
     /*
      * EFFECTS: print gameboard with hidden numbers, so that user can solve it.
      */
-    public void printGame() {
+    public void printUserMatrix() {
         // stub
     }
 
