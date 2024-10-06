@@ -1,14 +1,13 @@
 package model;
 
 public class Game {
-    private Matrix answerMatrix;
-    private Matrix userMatrix;
-    private String difficulty;
+    private Matrix matrix;
+    private int difficulty;
     private int timeElapsed;
     private int hintLeft;
 
 
-    public Game() {
+    public Game(int difficulty) {
         // answerMatrix = new Matrix();
         // userMatrix = new Matrix(answerMatrix);
     }
@@ -24,10 +23,5 @@ public class Game {
     public int getTime() {
         return timeElapsed;
     }
-
-
-    
-
-
 
 }

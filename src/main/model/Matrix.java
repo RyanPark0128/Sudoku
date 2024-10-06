@@ -206,6 +206,13 @@ public class Matrix {
      */
     public boolean checkAnswer() {
         //stub
+        for (int i=0; i<9; i++) {
+            for (int j=0; j<9; j++) {
+                if (gameboard.get(i).get(j).getValue() != gameboard.get(i).get(j).getUserValue()) {
+                    return false;
+                }
+            }
+        }
 
         return true;
     }

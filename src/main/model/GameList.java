@@ -18,5 +18,9 @@ public class GameList {
     public Game getGame(int index) {
         return list.get(index);
     }
+
+    public void addGame(Game game) {
+        list.add(game);
+    }
     
 }
