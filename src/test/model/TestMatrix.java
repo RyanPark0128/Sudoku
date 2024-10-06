@@ -99,6 +99,23 @@ public class TestMatrix {
         assertEquals(15, count);
     }
 
+    @Test
+    void testCheckAnswer() {
+        assertFalse(testMatrix.checkAnswer());
+        List<List<Cell>> list = testMatrix.getGameboard();
+
+        for (int i=0; i< 9; i++) {
+            for (int j=0; j<9; j++) {
+                list.get(i).get(j).setUserValue(list.get(i).get(j).getValue());
+            }
+        }
+
+        assertTrue(testMatrix.checkAnswer());
+    
+
+    }
+
+
 
     private boolean validateColumn(List<List<Cell>> board) {
         for (int i=0; i < board.size(); i++) {

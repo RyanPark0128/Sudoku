@@ -5,6 +5,7 @@ package model;
 public class Cell {
     private boolean isGiven; // will make the cell show/hide the value it has
     private int value; // represents the vallue it has.
+    private int userValue;
     
     /*
      * EFFECTS: creates the Cell object with value 0, and visiblity false.
@@ -26,6 +27,14 @@ public class Cell {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public int getUserValue() {
+        return userValue;
+    }
+
+    public void setUserValue(int userValue) {
+        this.userValue = userValue;
     }
 
     public boolean isGiven() {

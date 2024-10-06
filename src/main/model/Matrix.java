@@ -200,4 +200,15 @@ public class Matrix {
     }
 
 
+    /*
+     * EFFECTS: Compares the user answer to the sudoku game and the actual answer of the game.
+     * returns true if it matches else false.
+     */
+    public boolean checkAnswer() {
+        //stub
+
+        return true;
+    }
+
+
 }
