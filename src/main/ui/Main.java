@@ -5,7 +5,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Matrix m = new Matrix(25);
+        
+        Matrix m = new Matrix(40);
+
+
         List<List<Cell>> list = m.getGameboard();
         Main.printUserMatrix(list);
         Main.printMatrix(list);

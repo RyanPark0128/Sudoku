@@ -43,6 +43,15 @@ public class TestUser {
         assertEquals(testGameTwo, gameList.get(1));
     }
 
+    @Test
+    void testGenerateGame() {
+        testUser.generateNewGame(25);
+        assertEquals(1, testUser.getNumOfGames());
+        List<Game> gameList = testUser.getGameList();
+        Game testGame = gameList.get(0);
+        assertEquals(25, testGame.getNumOfClues());
+    }
+
     
 
     

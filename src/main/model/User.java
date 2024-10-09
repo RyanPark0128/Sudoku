@@ -19,6 +19,7 @@ public class User {
     }
 
 
+    
      /*
      * REQUIRES: 0 <= index < list.size()
      * EFFECTS: returns the game at the index given
@@ -33,6 +34,16 @@ public class User {
      */
     public void addGame(Game game) {
         list.add(game);
+    }
+
+    /*
+     * REQUIRES: 25 <= clues <= 40
+     * MODIFIES: this
+     * EFFECTS: generate a game and adds to the list
+     */
+
+    public void generateNewGame(int clues) {
+        list.add(new Game(clues));
     }
 
      /*

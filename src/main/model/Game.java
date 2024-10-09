@@ -7,7 +7,6 @@ public class Game {
     private int hintLeft;
     private boolean inProgress;
 
-
     public Game(int clues) {
         this.matrix = new Matrix(clues);
         this.clues = clues;
@@ -45,7 +44,7 @@ public class Game {
     }
 
     public void changeGameStatus() {
-        inProgress = !inProgress;
+        this.inProgress = !inProgress;
     }
 
 }

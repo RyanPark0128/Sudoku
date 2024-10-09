@@ -48,5 +48,7 @@ public class TestGame {
     void checkUserPlaying() {
         testGame.changeGameStatus();
         assertEquals(true, testGame.isPlaying());
+        testGame.changeGameStatus();
+        assertEquals(false, testGame.isPlaying());
     }
 }
