@@ -11,13 +11,13 @@ public class Matrix {
     private List<Integer> list; // Array of number 1 to 9 in random order for randomness when generating game
 
     /*
-     * REQUIRES: 20 <= cellsGiven <= 45
+     * REQUIRES: 20 <= clues <= 45
      * EFFECTS: Initialize 2d array with Cell. Cell will have value of 0 initially.
      * Also, list of number 1 to 9 in random order is generated.
      * makes a call to method generateMatrix which will populate the matrix with appropriate value.
      * Also decide which cells are going to be shown to user using generateUserMatrix method.
      */
-    public Matrix(int cellsGiven) {
+    public Matrix(int clues) {
         list = new ArrayList<>();
         gameboard = new ArrayList<List<Cell>>();
 
@@ -33,7 +33,7 @@ public class Matrix {
         }
 
         generateMatrix(0, 0);
-        generateUserMatrix(cellsGiven);
+        generateUserMatrix(clues);
     }
 
     public Matrix() {

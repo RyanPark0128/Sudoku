@@ -4,7 +4,6 @@ import java.util.List;
 
 public class User {
     private List<Game> list; // list of games that the user has
-    private String name; // name of the user
 
     /*
      * EFFECTS: creates new user that will be playing Sudoku games
