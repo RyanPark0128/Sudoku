@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class User {
     private List<Game> list; // list of games that the user has
@@ -10,6 +11,7 @@ public class User {
      */
     public User() {
         // stub
+        list = new ArrayList<Game>();
     }
 
     public List<Game> getGameList() {
@@ -37,8 +39,7 @@ public class User {
      * EFFECTS: returns number of games user has.
      */
     public int getNumOfGames() {
-        // stub
-        return 0;
+        return list.size();
     }
 
 

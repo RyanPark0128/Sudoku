@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class TestUser {
     private User testUser;
@@ -40,14 +39,8 @@ public class TestUser {
         testUser.addGame(testGameTwo);
 
         List<Game> gameList = testUser.getGameList();
-
-        List<Game> compare = new ArrayList<Game>();
-        compare.add(testGame);
-        compare.add(testGameTwo);
-
-        for (int i=0; i<2; i++) {
-            assertEquals(compare.get(i), gameList.get(i));
-        }
+        assertEquals(testGame, gameList.get(0));
+        assertEquals(testGameTwo, gameList.get(1));
     }
 
     
