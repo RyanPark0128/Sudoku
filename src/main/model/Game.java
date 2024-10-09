@@ -13,6 +13,10 @@ public class Game {
         // userMatrix = new Matrix(answerMatrix);
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: checks if there is hint left, if there is use hint.
+     */
     public void useHint() {
         //stub
     }
