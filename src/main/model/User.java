@@ -2,11 +2,11 @@ package model;
 
 import java.util.List;
 
-public class GameList {
+public class User {
     private List<Game> list;
 
 
-    public GameList() {
+    public User() {
         // stub
     }
 

@@ -24,6 +24,7 @@ public class TestMatrix {
     void testValidationMethod() {
 
         testEmptyMatrix.setCellValue(0, 0, 5);
+        assertEquals(5, testEmptyMatrix.getCellValue(0, 0));
 
         // Should not allow another 5 in the same row
         assertFalse(testEmptyMatrix.validation(0, 1, 5));
