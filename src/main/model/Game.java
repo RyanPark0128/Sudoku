@@ -9,8 +9,11 @@ public class Game {
 
 
     public Game(int clues) {
-        // answerMatrix = new Matrix();
-        // userMatrix = new Matrix(answerMatrix);
+        this.matrix = new Matrix(clues);
+        this.clues = clues;
+        this.timeElapsed = 0;
+        this.hintLeft = 3;
+        this.inProgress = false;
     }
 
     /*
@@ -18,7 +21,7 @@ public class Game {
      * EFFECTS: checks if there is hint left, if there is use hint.
      */
     public void useHint() {
-        //stub
+        hintLeft = hintLeft - 1;
     }
 
     public int getHintLeft() {
@@ -34,18 +37,15 @@ public class Game {
     }
 
     public int getNumOfClues() {
-        //stub
-
-        return 0;
+        return clues;
     }
 
     public boolean isPlaying() {
-        // stub;
-        return true;
+        return inProgress;
     }
 
     public void changeGameStatus() {
-        // stub;
+        inProgress = !inProgress;
     }
 
 }
