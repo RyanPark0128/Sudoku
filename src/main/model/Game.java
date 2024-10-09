@@ -5,6 +5,7 @@ public class Game {
     private int clues;
     private int timeElapsed;
     private int hintLeft;
+    private boolean inProgress;
 
 
     public Game(int clues) {
@@ -22,6 +23,25 @@ public class Game {
 
     public int getTime() {
         return timeElapsed;
+    }
+
+    public Matrix getMatrix() {
+        return matrix;
+    }
+
+    public int getNumOfClues() {
+        //stub
+
+        return 0;
+    }
+
+    public boolean isPlaying() {
+        // stub;
+        return true;
+    }
+
+    public void changeGameStatus() {
+        // stub;
     }
 
 }
