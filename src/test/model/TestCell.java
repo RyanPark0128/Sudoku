@@ -34,5 +34,18 @@ public class TestCell {
         testCell.setIsGiven(true);
         assertEquals(true, testCell.isGiven());
     }
+
+    @Test
+    void testUserValue() {
+        testCell.setValue(5);
+        testCell.setUserValue(7);
+
+        assertNotEquals(testCell.getValue(), testCell.getUserValue());
+
+        testCell.setUserValue(5);
+
+        assertEquals(testCell.getValue(), testCell.getUserValue());
+
+    }
 }
 

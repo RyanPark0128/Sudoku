@@ -149,57 +149,6 @@ public class Matrix {
         gameboard.get(row).get(col).setValue(value);
     }
 
-     /*
-     * EFFECTS: print every element of the matrix
-     */
-    // public void printMatrix() {
-    //     System.out.println();
-    //     System.out.println("- - - - - - - - - - - - -");
-    //     for (int i = 0; i < gameboard.size(); i++) {
-    //         System.out.print("| ");
-    //         for (int j = 0; j < gameboard.get(i).size(); j++) {
-    //             System.out.print(gameboard.get(i).get(j).getValue() + " ");
-    //             if (j % 3 == 2) {
-    //                 System.out.print("| ");
-    //             }
-    //         }
-    //         System.out.println();
-    //         if (i % 3 == 2) {
-    //             System.out.println("- - - - - - - - - - - - -");
-    //         }
-    //     }
-    //     System.out.println();
-    // }
-
-
-    /*
-     * EFFECTS: print gameboard with hidden numbers, so that user can solve it.
-     */
-    // public void printUserMatrix() {
-    //     // stub
-    //     System.out.println();
-    //     System.out.println("- - - - - - - - - - - - -");
-    //     for (int i = 0; i < gameboard.size(); i++) {
-    //         System.out.print("| ");
-    //         for (int j = 0; j < gameboard.get(i).size(); j++) {
-    //             if (gameboard.get(i).get(j).isGiven()) {
-    //                 System.out.print(gameboard.get(i).get(j).getValue() + " ");
-    //             } else {
-    //                 System.out.print("- ");           
-    //             }
-    //             if (j % 3 == 2) {
-    //                 System.out.print("| ");
-    //             }
-    //         }
-    //         System.out.println();
-    //         if (i % 3 == 2) {
-    //             System.out.println("- - - - - - - - - - - - -");
-    //         }
-    //     }
-    //     System.out.println();
-    // }
-
-
     /*
      * EFFECTS: Compares the user answer to the sudoku game and the actual answer of the game.
      * returns true if it matches else false.
