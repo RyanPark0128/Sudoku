@@ -12,42 +12,26 @@ import org.junit.jupiter.api.Test;
 public class TestMatrix {
     private Matrix testMatrix;
     private Matrix testEmptyMatrix;
-    
+
     @BeforeEach
     void runBefore() {
         testMatrix = new Matrix(15);
         testEmptyMatrix = new Matrix();
     }
 
-
     @Test
     void testValidationMethod() {
 
         testEmptyMatrix.setCellValue(0, 0, 5);
         assertEquals(5, testEmptyMatrix.getCellValue(0, 0));
-
-        // Should not allow another 5 in the same row
         assertFalse(testEmptyMatrix.validation(0, 1, 5));
-
-        // Should not allow another 5 in the same column
         assertFalse(testEmptyMatrix.validation(1, 0, 5));
-
-        // Should not allow another 5 in the same subgrid
         assertFalse(testEmptyMatrix.validation(1, 1, 5));
-
-        // Should allow 5 in a different row, column, and subgrid
         assertTrue(testEmptyMatrix.validation(3, 3, 5));
 
-        // Place another number and test again
         testEmptyMatrix.setCellValue(0, 1, 6);
-
-        // Should not allow 6 in the same row
         assertFalse(testEmptyMatrix.validation(0, 2, 6));
-
-        // Should not allow 6 in the same column
         assertFalse(testEmptyMatrix.validation(2, 1, 6));
-
-        // Should not allow 6 in the same subgrid
         assertFalse(testEmptyMatrix.validation(1, 2, 6));
     }
 
@@ -65,18 +49,18 @@ public class TestMatrix {
         assertEquals(false, validateColumn(invalidMatrix));
         assertEquals(false, validateSubgrid(invalidMatrix));
     }
-    
+
     private boolean validateRows(List<List<Cell>> board) {
-        for (int i=0; i < board.size(); i++) {
+        for (int i = 0; i < board.size(); i++) {
             boolean[] check = new boolean[9];
             Arrays.fill(check, false);
 
-            for (int j=0; j < board.get(i).size(); j++) {
+            for (int j = 0; j < board.get(i).size(); j++) {
                 int cellValue = board.get(i).get(j).getValue();
-                if (check[cellValue-1] == true) {
+                if (check[cellValue - 1] == true) {
                     return false;
                 }
-                check[cellValue-1] = true;
+                check[cellValue - 1] = true;
             }
         }
         return true;
@@ -85,12 +69,11 @@ public class TestMatrix {
     @Test
     void testGeneratedUserMatrix() {
 
-        
         int count = 0;
         List<List<Cell>> list = testMatrix.getGameboard();
 
-        for (int i=0; i< 9; i++) {
-            for (int j=0; j<9; j++) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
                 if (list.get(i).get(j).isGiven()) {
                     count++;
                 }
@@ -105,30 +88,27 @@ public class TestMatrix {
         assertFalse(testMatrix.checkAnswer());
         List<List<Cell>> list = testMatrix.getGameboard();
 
-        for (int i=0; i< 9; i++) {
-            for (int j=0; j<9; j++) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
                 list.get(i).get(j).setUserValue(list.get(i).get(j).getValue());
             }
         }
 
         assertTrue(testMatrix.checkAnswer());
-    
 
     }
 
-
-
     private boolean validateColumn(List<List<Cell>> board) {
-        for (int i=0; i < board.size(); i++) {
+        for (int i = 0; i < board.size(); i++) {
             boolean[] check = new boolean[9];
             Arrays.fill(check, false);
 
-            for (int j=0; j < board.get(i).size(); j++) {
+            for (int j = 0; j < board.get(i).size(); j++) {
                 int cellValue = board.get(j).get(i).getValue();
-                if (check[cellValue-1] == true) {
+                if (check[cellValue - 1] == true) {
                     return false;
                 }
-                check[cellValue-1] = true;
+                check[cellValue - 1] = true;
             }
         }
         return true;
@@ -149,13 +129,13 @@ public class TestMatrix {
     private boolean validateSubgrid(List<List<Cell>> board, int row, int col) {
         boolean[] check = new boolean[9];
         Arrays.fill(check, false);
-        for (int i = row; i < row+ 3; i++) {
+        for (int i = row; i < row + 3; i++) {
             for (int j = col; j < col + 3; j++) {
                 int value = board.get(i).get(j).getValue();
-                if (check[value-1]) {
+                if (check[value - 1]) {
                     return false; // Invalid value or duplicate in subgrid
                 }
-                check[value-1] = true;
+                check[value - 1] = true;
             }
         }
         return true;
@@ -172,10 +152,9 @@ public class TestMatrix {
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                invalid.get(i).add(new Cell(1+ rand.nextInt(9)));
+                invalid.get(i).add(new Cell(1 + rand.nextInt(9)));
             }
         }
-
 
         return invalid;
     }

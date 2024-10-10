@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-
-
 public class TestGame {
     private Game testGame;
 
@@ -17,21 +15,19 @@ public class TestGame {
         testGame = new Game(25);
     }
 
-
     @Test
     void testConstructor() {
         assertEquals(25, testGame.getNumOfClues());
         assertEquals(false, testGame.isPlaying());
         assertEquals(3, testGame.getHintLeft());
         assertEquals(0, testGame.getTime());
-        
+
         Matrix testMatrix = testGame.getMatrix();
         List<List<Cell>> board = testMatrix.getGameboard();
 
         assertEquals(9, board.size());
         assertEquals(9, board.get(0).size());
     }
-
 
     @Test
     void checkHintUsage() {

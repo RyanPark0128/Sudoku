@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 public class TestCell {
     private Cell testCell;
 
@@ -27,7 +26,6 @@ public class TestCell {
         assertEquals(9, testCell.getValue());
     }
 
-
     @Test
     void testSetVisible() {
         assertEquals(false, testCell.isGiven());
@@ -48,4 +46,3 @@ public class TestCell {
 
     }
 }
-

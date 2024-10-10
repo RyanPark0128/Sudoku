@@ -1,12 +1,20 @@
 package model;
 
-public class Game {
-    private Matrix matrix;
-    private int clues;
-    private int timeElapsed;
-    private int hintLeft;
-    private boolean inProgress;
 
+// Represents each game in user's database.
+public class Game {
+    private Matrix matrix; // matrix of the game.
+    private int clues; // number of clues that will be open in the gameboard
+    private int timeElapsed; // time passed since the game started
+    private int hintLeft; // number of hints left for this game
+    private boolean inProgress; // whether the game is paused or in progress
+
+
+     /*
+     * REQUIRES: 20 <= clues <= 45
+     * MODIFIES: this
+     * EFFECTS: checks if there is hint left, if there is use hint.
+     */
     public Game(int clues) {
         this.matrix = new Matrix(clues);
         this.clues = clues;

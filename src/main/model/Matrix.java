@@ -12,10 +12,13 @@ public class Matrix {
 
     /*
      * REQUIRES: 20 <= clues <= 45
+     * MODIFIES: This
      * EFFECTS: Initialize 2d array with Cell. Cell will have value of 0 initially.
      * Also, list of number 1 to 9 in random order is generated.
-     * makes a call to method generateMatrix which will populate the matrix with appropriate value.
-     * Also decide which cells are going to be shown to user using generateUserMatrix method.
+     * makes a call to method generateMatrix which will populate the matrix with
+     * appropriate value.
+     * Also decide which cells are going to be shown to user using
+     * generateUserMatrix method.
      */
     public Matrix(int clues) {
         list = new ArrayList<>();
@@ -23,7 +26,7 @@ public class Matrix {
 
         for (int i = 0; i < 9; i++) {
             gameboard.add(new ArrayList<Cell>());
-            list.add(i+1);
+            list.add(i + 1);
         }
 
         for (int i = 0; i < 9; i++) {
@@ -36,13 +39,18 @@ public class Matrix {
         generateUserMatrix(clues);
     }
 
+
+    /*
+     * MODIFIES: This
+     * EFFECTS: Initialize 2d array with cells that has value of 0.
+     */
     public Matrix() {
         list = new ArrayList<>();
         gameboard = new ArrayList<List<Cell>>();
 
         for (int i = 0; i < 9; i++) {
             gameboard.add(new ArrayList<Cell>());
-            list.add(i+1);
+            list.add(i + 1);
         }
 
         for (int i = 0; i < 9; i++) {
@@ -52,9 +60,8 @@ public class Matrix {
         }
     }
 
-
     /*
-     * REQUIRES: 0 <= row <= 9, 0 <= col <= 9, first call to the method must be row == col == 0;
+     * REQUIRES: 0 <= row < 9, 0 <= col < 9, first call to the method must be row == col == 0;
      * MODIFIES: this
      * EFFECTS: Populates matrix recursively, make validation before assigning value
      */
@@ -80,11 +87,10 @@ public class Matrix {
         return false;
     }
 
-
     /*
      * REQUIRES: 20 <= cellsGiven <= 45
      * MODIFIES: this
-     * EFFECTS: Populates matrix recursively, make validation before assigning value
+     * EFFECTS: Randomly decide which cells will be shown to the user
      */
     public void generateUserMatrix(int cellsGiven) {
         int count = cellsGiven;
@@ -102,9 +108,9 @@ public class Matrix {
         }
     }
 
-
     /*
-     * REQUIRES: 0 <= row <= 9, 0 <= col <= 9
+     * REQUIRES: 0 <= row < 9, 0 <= col < 9
+     * MODIFIES: This
      * EFFECTS: validates if the number chosen can be assigned to the given cell.
      * checks both column and row to see if there is duplicate number. Also checks
      * if the number is present in its subgrid.
@@ -140,23 +146,32 @@ public class Matrix {
         return gameboard;
     }
 
-
+    /*
+     * REQUIRES: 0 <= row < 9, 0 <= col < 9
+     * EFFECTS: returns the value of a cell at given row and column
+     */
     public int getCellValue(int row, int col) {
         return gameboard.get(row).get(col).getValue();
     }
 
+    /*
+     * REQUIRES: 0 <= row < 9, 0 <= col < 9, 1 <= value <= 9
+     * MODIFIES: value of Cell
+     * EFFECTS: sets the value of cell at given location to given value
+     */
     public void setCellValue(int row, int col, int value) {
         gameboard.get(row).get(col).setValue(value);
     }
 
     /*
-     * EFFECTS: Compares the user answer to the sudoku game and the actual answer of the game.
+     * EFFECTS: Compares the user answer to the sudoku game and the actual answer of
+     * the game.
      * returns true if it matches else false.
      */
     public boolean checkAnswer() {
-        //stub
-        for (int i=0; i<9; i++) {
-            for (int j=0; j<9; j++) {
+        // stub
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
                 if (gameboard.get(i).get(j).getValue() != gameboard.get(i).get(j).getUserValue()) {
                     return false;
                 }
@@ -165,6 +180,5 @@ public class Matrix {
 
         return true;
     }
-
 
 }

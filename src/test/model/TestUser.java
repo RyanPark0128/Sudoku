@@ -1,6 +1,5 @@
 package model;
 
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +14,6 @@ public class TestUser {
     void runBefore() {
         testUser = new User();
     }
-
 
     @Test
     void testConstructor() {
@@ -52,7 +50,4 @@ public class TestUser {
         assertEquals(25, testGame.getNumOfClues());
     }
 
-    
-
-    
 }
