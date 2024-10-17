@@ -17,6 +17,7 @@ public class TestCell {
     void testConstructor() {
         assertEquals(0, testCell.getValue());
         assertEquals(false, testCell.isGiven());
+
     }
 
     @Test

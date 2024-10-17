@@ -10,6 +10,7 @@ This project is designed for individuals who enjoy brain games and puzzle-solvin
 - I want to be able to decide the difficulty of the Sudoku game.
 - I want to be able to check the answer after completing the game.
 - I want to be able to save the progress of the game, history of games played.
+- I want to be given the option to load my game list from file.
 - I want to be able to get some hints when I get stuck.
 - I want to be able to use note functions to note potential answer for each cell.
 - I want to be able to measure time it took to solve the puzzle.
