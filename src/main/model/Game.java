@@ -1,8 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+
+import persistence.Writable;
 
 // Represents each game in user's database.
-public class Game {
+public class Game implements Writable{
     private Matrix matrix; // matrix of the game.
     private int clues; // number of clues that will be open in the gameboard
     private int timeElapsed; // time passed since the game started
@@ -55,4 +58,14 @@ public class Game {
         this.inProgress = !inProgress;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("matrix", matrix.toJson());
+        json.put("clues", clues);
+        json.put("timeElapsed", timeElapsed);
+        json.put("hintLeft", hintLeft);
+        json.put("inProgress", inProgress);
+        return json;
+    }
 }

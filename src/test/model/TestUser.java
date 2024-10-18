@@ -12,12 +12,13 @@ public class TestUser {
 
     @BeforeEach
     void runBefore() {
-        testUser = new User();
+        testUser = new User("Ryan");
     }
 
     @Test
     void testConstructor() {
         assertEquals(0, testUser.getNumOfGames());
+        assertEquals("Ryan", testUser.getName());
     }
 
     @Test

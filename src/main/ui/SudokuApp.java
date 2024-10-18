@@ -21,9 +21,10 @@ public class SudokuApp {
     public SudokuApp() throws FileNotFoundException {
         input = new Scanner(System.in);
         workRoom = new User("Ryan");
-        // jsonWriter = new JsonWriter(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        saveUser();
         // jsonReader = new JsonReader(JSON_STORE);
-        runSudoku();
+        // runSudoku();
     }
 
     // MODIFIES: this

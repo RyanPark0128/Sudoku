@@ -5,8 +5,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import persistence.Writable;
+
 // Represents a matrix for sudoku game.
-public class Matrix {
+public class Matrix implements Writable{
     private List<List<Cell>> gameboard; // Matrix that represents the game board, consisting of 2d array of Cell class
     private List<Integer> list; // Array of number 1 to 9 in random order for randomness when generating game
 
@@ -179,6 +184,28 @@ public class Matrix {
         }
 
         return true;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("gameboard", cellsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns Games in this user as a JSON array
+    private JSONArray cellsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (int i=0; i< gameboard.size(); i++) {
+            JSONArray jsonSubArray = new JSONArray();
+            for (int j=0; j < gameboard.get(i).size(); j++) {
+                jsonSubArray.put(gameboard.get(i).get(j).toJson());
+            }
+            jsonArray.put(jsonSubArray);
+        }
+
+        return jsonArray;
     }
 
 }
