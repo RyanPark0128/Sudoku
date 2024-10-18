@@ -1,8 +1,5 @@
 package persistence;
 
-import model.Category;
-import model.Thingy;
-import model.WorkRoom;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
