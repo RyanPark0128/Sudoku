@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import org.json.JSONObject;
 
 import persistence.Writable;
@@ -23,6 +25,14 @@ public class Game implements Writable{
         this.clues = clues;
         this.timeElapsed = 0;
         this.hintLeft = 3;
+        this.inProgress = false;
+    }
+
+    public Game(int clues, int timeElapsed, int hintLeft, Matrix gameboard) {
+        this.matrix = gameboard;
+        this.clues = clues;
+        this.timeElapsed = timeElapsed;
+        this.hintLeft = hintLeft;
         this.inProgress = false;
     }
 

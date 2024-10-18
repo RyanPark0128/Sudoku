@@ -28,6 +28,12 @@ public class Cell implements Writable{
         isGiven = false;
     }
 
+    public Cell(boolean isGiven, int value, int userValue) {
+        this.isGiven = isGiven;
+        this.value = value;
+        this.userValue = userValue;
+    }
+
     public int getValue() {
         return value;
     }

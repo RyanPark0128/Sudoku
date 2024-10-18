@@ -1,6 +1,7 @@
 package ui;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ import persistence.JsonWriter;
 public class SudokuApp {
     private static final String JSON_STORE = "./data/sudoku.json";
     private Scanner input;
-    private User workRoom;
+    private User user;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
@@ -20,11 +21,13 @@ public class SudokuApp {
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
         input = new Scanner(System.in);
-        workRoom = new User("Ryan");
+        user = new User("Ryan");
+        user.generateNewGame(30);
+        user.generateNewGame(40);
+        user.generateNewGame(45);
         jsonWriter = new JsonWriter(JSON_STORE);
-        saveUser();
-        // jsonReader = new JsonReader(JSON_STORE);
-        // runSudoku();
+        jsonReader = new JsonReader(JSON_STORE);
+        runSudoku();
     }
 
     // MODIFIES: this
@@ -61,9 +64,9 @@ public class SudokuApp {
     // EFFECTS: processes user command
     private void processCommand(String command) {
         if (command.equals("1")) {
-            // addThingy();
+
         } else if (command.equals("2")) {
-            // printThingies();
+            
         } else {
             System.out.println("Selection not valid...");
         }
@@ -71,13 +74,25 @@ public class SudokuApp {
 
     // EFFECTS: saves the user to file
     private void saveUser() {
-
+        try {
+            jsonWriter.open();
+            jsonWriter.write(user);
+            jsonWriter.close();
+            System.out.println("Saved " + user.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: loads user from file
     private void loadUser() {
-
+        try {
+            user = jsonReader.read();
+            System.out.println("Loaded " + user.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 
 

@@ -44,6 +44,10 @@ public class Matrix implements Writable{
         generateUserMatrix(clues);
     }
 
+    public Matrix(List<List<Cell>> gameboard) {
+        this.gameboard = gameboard;
+    }
+
 
     /*
      * MODIFIES: This
