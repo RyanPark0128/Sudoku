@@ -6,12 +6,13 @@ import java.util.ArrayList;
 // Represent user that will be playing the game.
 public class User {
     private List<Game> list; // list of games that the user has
-
+    private String name;
     /*
      * EFFECTS: creates new user that will be playing Sudoku games
      */
-    public User() {
+    public User(String name) {
         list = new ArrayList<Game>();
+        this.name = name;
     }
 
     public List<Game> getGameList() {
