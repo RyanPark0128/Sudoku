@@ -20,7 +20,7 @@ public class SudokuApp {
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
         input = new Scanner(System.in);
-        workRoom = new User("Alex's workroom");
+        workRoom = new User("Ryan");
         // jsonWriter = new JsonWriter(JSON_STORE);
         // jsonReader = new JsonReader(JSON_STORE);
         runSudoku();

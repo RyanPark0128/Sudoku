@@ -51,4 +51,9 @@ public class User {
         return list.size();
     }
 
+    // EFFECTS: return name of user
+    public String getName() {
+        return name;
+    }
+
 }
