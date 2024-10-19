@@ -21,10 +21,7 @@ public class SudokuApp {
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
         input = new Scanner(System.in);
-        user = new User("Ryan");
-        user.generateNewGame(30);
-        user.generateNewGame(40);
-        user.generateNewGame(45);
+        user = null;
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         runSudoku();
@@ -42,7 +39,7 @@ public class SudokuApp {
             command = input.next();
             command = command.toLowerCase();
 
-            if (command.equals("3")) {
+            if (command.equals("4")) {
                 keepGoing = false;
             } else {
                 processCommand(command);
@@ -57,16 +54,57 @@ public class SudokuApp {
         System.out.println("\nSelect from:");
         System.out.println("\t1 -> New user");
         System.out.println("\t2 -> Load user");
-        System.out.println("\t3 -> quit");
+        System.out.println("\t3 -> list of games");
+        System.out.println("\t4 -> quit");
     }
 
     // MODIFIES: this
     // EFFECTS: processes user command
     private void processCommand(String command) {
         if (command.equals("1")) {
+            System.out.println("Enter your name: \n");
+            user = new User(input.nextLine());
+            displayMenu2();
+            processCommand2(input.next());
 
         } else if (command.equals("2")) {
+            loadUser();
+            if (user != null) {
+
+            }
+            displayMenu2();
+            processCommand2(input.next());
             
+        } else if (command.equals("3")) {
+            List<Game> gl = user.getGameList();
+
+            for (int i=0; i< gl.size(); i++) {
+                printUserMatrix(gl.get(i).getMatrix().getGameboard());
+                System.out.println();
+                printMatrix(gl.get(i).getMatrix().getGameboard());
+                System.out.println();
+            }
+            
+        } else {
+            System.out.println("Selection not valid...");
+        }
+    }
+
+    public void displayMenu2() {
+        System.out.println("\nSelect from:");
+        System.out.println("\t1 -> New game");
+        System.out.println("\t2 -> Load game");
+        System.out.println("\t3 -> quit");
+    }
+
+
+    private void processCommand2(String command) {
+        if (command.equals("1")) {
+            System.out.println("Enter # of clues: \n");
+            user.addGame(new Game(input.nextInt()));
+
+        } else if (command.equals("2")) {
+
         } else {
             System.out.println("Selection not valid...");
         }
