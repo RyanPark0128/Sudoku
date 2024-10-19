@@ -31,8 +31,8 @@ public class Game implements Writable{
     public Game(int clues, int timeElapsed, int hintLeft, Matrix gameboard) {
         this.matrix = gameboard;
         this.clues = clues;
-        this.timeElapsed = timeElapsed;
         this.hintLeft = hintLeft;
+        this.timeElapsed = timeElapsed;
         this.inProgress = false;
     }
 
@@ -73,8 +73,8 @@ public class Game implements Writable{
         JSONObject json = new JSONObject();
         json.put("matrix", matrix.toJson());
         json.put("clues", clues);
-        json.put("timeElapsed", timeElapsed);
         json.put("hintLeft", hintLeft);
+        json.put("timeElapsed", timeElapsed);
         json.put("inProgress", inProgress);
         return json;
     }

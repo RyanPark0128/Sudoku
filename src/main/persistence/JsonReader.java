@@ -62,7 +62,7 @@ public class JsonReader {
     private void addGame(User user, JSONObject jsonObject) {
         int clues = jsonObject.getInt("clues");
         int timeElapsed = jsonObject.getInt("timeElapsed");
-        int hintLeft = jsonObject.getInt("timeElapsed");
+        int hintLeft = jsonObject.getInt("hintLeft");
         JSONObject jsonMatrix = jsonObject.getJSONObject("matrix");
         Matrix matrix = addMatrix(jsonMatrix);
 
