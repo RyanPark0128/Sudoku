@@ -17,7 +17,6 @@ public class SudokuApp {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
-
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
         input = new Scanner(System.in);
@@ -39,7 +38,7 @@ public class SudokuApp {
             command = input.next();
             command = command.toLowerCase();
 
-            if (command.equals("4")) {
+            if (command.equals("6")) {
                 keepGoing = false;
             } else {
                 processCommand(command);
@@ -52,10 +51,12 @@ public class SudokuApp {
     // EFFECTS: displays menu of options to user
     public void displayMenu() {
         System.out.println("\nSelect from:");
-        System.out.println("\t1 -> New user");
-        System.out.println("\t2 -> Load user");
-        System.out.println("\t3 -> list of games");
-        System.out.println("\t4 -> quit");
+        System.out.println("\t1 -> Create new user");
+        System.out.println("\t2 -> Load existing user");
+        System.out.println("\t3 -> Start a new game");
+        System.out.println("\t4 -> Load list of games to play");
+        System.out.println("\t5 -> Save progress");
+        System.out.println("\t6 -> quit");
     }
 
     // MODIFIES: this
@@ -63,50 +64,84 @@ public class SudokuApp {
     private void processCommand(String command) {
         if (command.equals("1")) {
             System.out.println("Enter your name: \n");
+            input.nextLine();
             user = new User(input.nextLine());
-            displayMenu2();
-            processCommand2(input.next());
-
         } else if (command.equals("2")) {
             loadUser();
-            if (user != null) {
-
+            if (user == null) {
+                System.out.println("No user to load");
+            } else {
+                System.out.println("User " + user.getName() + " loaded");
             }
-            displayMenu2();
-            processCommand2(input.next());
-            
         } else if (command.equals("3")) {
-            List<Game> gl = user.getGameList();
-
-            for (int i=0; i< gl.size(); i++) {
-                printUserMatrix(gl.get(i).getMatrix().getGameboard());
-                System.out.println();
-                printMatrix(gl.get(i).getMatrix().getGameboard());
-                System.out.println();
+            if (user == null) {
+                System.out.println("Create user first");
+            } else {
+                System.out.println("Enter # of clues: \n");
+                Game newGame = new Game(input.nextInt());
+                user.addGame(newGame);
+                playGame(newGame);
             }
-            
+        } else if (command.equals("4")) {
+            if (user == null) {
+                System.out.println("Create user first");
+            } else {
+                List<Game> gl = user.getGameList();
+                if (gl.size() > 0) {
+                    for (int i = 0; i < gl.size(); i++) {
+                        System.out.println(
+                                (i + 1) + ") Game " + (i + 1) + "\n\t\t clues: " + gl.get(i).getNumOfClues()
+                                        + "\n\t\t hintLeft: " + gl.get(i).getHintLeft() + "\n\t\t timeElapesd: "
+                                        + gl.get(i).getTime() + "\n");
+                    }
+                    System.out.println("Which game do you want to load (" + (1) + " ~ " + (gl.size()) + ")" + ": ");
+                    playGame(gl.get(input.nextInt() - 1));
+                } else {
+                    System.out.println("No game available to load");
+                }
+            }
+
+        } else if (command.equals("5")) {
+            saveUser();
         } else {
             System.out.println("Selection not valid...");
         }
     }
 
-    public void displayMenu2() {
-        System.out.println("\nSelect from:");
-        System.out.println("\t1 -> New game");
-        System.out.println("\t2 -> Load game");
-        System.out.println("\t3 -> quit");
-    }
+    // REQUIRES: Correctly instantiated Game object
+    // MODIFIES: this
+    // EFFECTS: processes user command
+    public void playGame(Game g) {
+        boolean keepGoing = true;
+        String command = null;
 
+        while (keepGoing) {
+            printUserMatrix(g.getMatrix().getGameboard());
+            System.out.println("1 -> use hint");
+            System.out.println("2 -> submit answer");
+            System.out.println("3 -> show answers");
+            System.out.println("4 -> Back to main menu");
+            command = input.next();
+            command = command.toLowerCase();
 
-    private void processCommand2(String command) {
-        if (command.equals("1")) {
-            System.out.println("Enter # of clues: \n");
-            user.addGame(new Game(input.nextInt()));
+            if (command.equals("4")) {
+                keepGoing = false;
+            } else if (command.equals("1")) {
+                if (g.getHintLeft() > 0) {
+                    g.useHint();
+                } else {
+                    System.out.println("No more hint left");
+                }
+            } else if (command.equals("2")) {
+                if (!g.getMatrix().checkAnswer()) {
+                    System.out.println("Your answer to the matrix is wrong");
+                } else {
+                    System.out.println("Congrats! you solved the sudoku puzzle");
+                }
 
-        } else if (command.equals("2")) {
-
-        } else {
-            System.out.println("Selection not valid...");
+            } else if (command.equals("3")) {
+                printMatrix(g.getMatrix().getGameboard());
+            }
         }
     }
 
@@ -133,10 +168,8 @@ public class SudokuApp {
         }
     }
 
-
-
-    //REQUIRES: gameboard.size() == 9, gameboard[0].size() == 9
-    //EFFECT: Prints the solution matrix of the Sudoku Game
+    // REQUIRES: gameboard.size() == 9, gameboard[0].size() == 9
+    // EFFECT: Prints the solution matrix of the Sudoku Game
     public static void printMatrix(List<List<Cell>> gameboard) {
         System.out.println();
         System.out.println("- - - - - - - - - - - - -");
@@ -156,9 +189,8 @@ public class SudokuApp {
         System.out.println();
     }
 
-
-    //REQUIRES: gameboard.size() == 9, gameboard[0].size() == 9
-    //EFFECT: Prints the user solution matrix of the Sudoku Game
+    // REQUIRES: gameboard.size() == 9, gameboard[0].size() == 9
+    // EFFECT: Prints the user solution matrix of the Sudoku Game
     public static void printUserMatrix(List<List<Cell>> gameboard) {
         // stub
         System.out.println();
