@@ -1,24 +1,21 @@
 package model;
 
-import java.util.List;
-
 import org.json.JSONObject;
 
 import persistence.Writable;
 
 // Represents each game in user's database.
-public class Game implements Writable{
+public class Game implements Writable {
     private Matrix matrix; // matrix of the game.
     private int clues; // number of clues that will be open in the gameboard
     private int timeElapsed; // time passed since the game started
     private int hintLeft; // number of hints left for this game
     private boolean inProgress; // whether the game is paused or in progress
 
-
-     /*
+    /*
      * REQUIRES: 20 <= clues <= 45
      * MODIFIES: this
-     * EFFECTS: checks if there is hint left, if there is use hint.
+     * EFFECTS: creates game object with given clues.
      */
     public Game(int clues) {
         this.matrix = new Matrix(clues);
@@ -28,6 +25,11 @@ public class Game implements Writable{
         this.inProgress = false;
     }
 
+    /*
+     * REQUIRES: 20 <= clues <= 45
+     * MODIFIES: this
+     * EFFECTS: creates game object with given value when loading saved file.
+     */
     public Game(int clues, int timeElapsed, int hintLeft, Matrix gameboard) {
         this.matrix = gameboard;
         this.clues = clues;
@@ -68,6 +70,7 @@ public class Game implements Writable{
         this.inProgress = !inProgress;
     }
 
+    // EFFECTS: returns Json Object for Game
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

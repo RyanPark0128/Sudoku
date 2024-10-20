@@ -15,6 +15,7 @@ import org.json.*;
 // Represents a reader that reads user from JSON data stored in file
 public class JsonReader {
     private String source;
+
     // EFFECTS: constructs reader to read from source file
     public JsonReader(String source) {
         this.source = source;
@@ -69,6 +70,7 @@ public class JsonReader {
         user.addGame(new Game(clues, timeElapsed, hintLeft, matrix));
     }
 
+    // EFFECTS: Read gameboard from file and uses it to create the matrix.
     private Matrix addMatrix(JSONObject jsonMatrix) {
         JSONArray array = jsonMatrix.getJSONArray("gameboard");
         List<List<Cell>> gameboard = new ArrayList<List<Cell>>();
@@ -76,10 +78,9 @@ public class JsonReader {
             gameboard.add(new ArrayList<Cell>());
         }
 
-
-        for (int i=0; i< 9; i++) {
+        for (int i = 0; i < 9; i++) {
             JSONArray subArray = array.getJSONArray(i);
-            for (int j=0; j<9; j++) {
+            for (int j = 0; j < 9; j++) {
                 int userValue = subArray.getJSONObject(j).getInt("userValue");
                 int value = subArray.getJSONObject(j).getInt("value");
                 boolean isGiven = subArray.getJSONObject(j).getBoolean("isGiven");

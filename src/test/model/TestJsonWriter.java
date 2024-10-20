@@ -56,7 +56,7 @@ public class TestJsonWriter {
             JsonReader reader = new JsonReader("./data/testWriterCorrectSave.json");
             User userLoaded = reader.read();
 
-            assertTrue(compareUsers(user,userLoaded));
+            assertTrue(compareUsers(user, userLoaded));
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
@@ -77,7 +77,7 @@ public class TestJsonWriter {
             JsonReader reader = new JsonReader("./data/testWriter3Games.json");
             User userLoaded = reader.read();
 
-            assertTrue(compareUsers(user,userLoaded));
+            assertTrue(compareUsers(user, userLoaded));
 
         } catch (IOException e) {
             fail("Exception should not have been thrown");

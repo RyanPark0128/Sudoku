@@ -61,6 +61,7 @@ public class SudokuApp {
 
     // MODIFIES: this
     // EFFECTS: processes user command
+    @SuppressWarnings("methodlength")
     private void processCommand(String command) {
         if (command.equals("1")) {
             System.out.println("Enter your name: \n");
@@ -111,6 +112,7 @@ public class SudokuApp {
     // REQUIRES: Correctly instantiated Game object
     // MODIFIES: this
     // EFFECTS: processes user command
+    @SuppressWarnings("methodlength")
     public void playGame(Game g) {
         boolean keepGoing = true;
         String command = null;

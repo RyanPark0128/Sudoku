@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class User implements Writable {
     private List<Game> list; // list of games that the user has
     private String name;
+
     /*
      * EFFECTS: creates new user that will be playing Sudoku games
      */
@@ -62,6 +63,7 @@ public class User implements Writable {
         return name;
     }
 
+    // EFFECTS: returns Json object of user
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

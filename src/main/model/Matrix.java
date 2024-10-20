@@ -11,7 +11,7 @@ import org.json.JSONObject;
 import persistence.Writable;
 
 // Represents a matrix for sudoku game.
-public class Matrix implements Writable{
+public class Matrix implements Writable {
     private List<List<Cell>> gameboard; // Matrix that represents the game board, consisting of 2d array of Cell class
     private List<Integer> list; // Array of number 1 to 9 in random order for randomness when generating game
 
@@ -44,10 +44,14 @@ public class Matrix implements Writable{
         generateUserMatrix(clues);
     }
 
+    /*
+     * REQUIRES: gameboard.size() == 9 && gameboard.get(0).size() == 9
+     * MODIFIES: This
+     * EFFECTS: Initialize 2d array with cells with given gameboard.
+     */
     public Matrix(List<List<Cell>> gameboard) {
         this.gameboard = gameboard;
     }
-
 
     /*
      * MODIFIES: This
@@ -70,7 +74,8 @@ public class Matrix implements Writable{
     }
 
     /*
-     * REQUIRES: 0 <= row < 9, 0 <= col < 9, first call to the method must be row == col == 0;
+     * REQUIRES: 0 <= row < 9, 0 <= col < 9, first call to the method must be row ==
+     * col == 0;
      * MODIFIES: this
      * EFFECTS: Populates matrix recursively, make validation before assigning value
      */
@@ -190,6 +195,9 @@ public class Matrix implements Writable{
         return true;
     }
 
+    /*
+     * EFFECTS: creates Json object for Matrix
+     */
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
@@ -197,13 +205,13 @@ public class Matrix implements Writable{
         return json;
     }
 
-    // EFFECTS: returns Games in this user as a JSON array
+    // EFFECTS: returns 2D Json object of Cell class.
     private JSONArray cellsToJson() {
         JSONArray jsonArray = new JSONArray();
 
-        for (int i=0; i< gameboard.size(); i++) {
+        for (int i = 0; i < gameboard.size(); i++) {
             JSONArray jsonSubArray = new JSONArray();
-            for (int j=0; j < gameboard.get(i).size(); j++) {
+            for (int j = 0; j < gameboard.get(i).size(); j++) {
                 jsonSubArray.put(gameboard.get(i).get(j).toJson());
             }
             jsonArray.put(jsonSubArray);

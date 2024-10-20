@@ -5,7 +5,7 @@ import org.json.JSONObject;
 import persistence.Writable;
 
 // Represents each cell in the sudoku gameboard.
-public class Cell implements Writable{
+public class Cell implements Writable {
     private boolean isGiven; // will make the cell show/hide the value it has
     private int value; // represents the vallue it has.
     private int userValue; // values that is given by user.
@@ -18,7 +18,7 @@ public class Cell implements Writable{
         isGiven = false;
     }
 
-     /*
+    /*
      * REQUIRES: 1 <= value <= 9
      * MODIFIES: this
      * EFFECTS: creates cell with given value
@@ -28,6 +28,11 @@ public class Cell implements Writable{
         isGiven = false;
     }
 
+    /*
+     * REQUIRES: 1 <= value, userValue <= 9
+     * MODIFIES: this
+     * EFFECTS: creates cell with given value when loading user from saved file
+     */
     public Cell(boolean isGiven, int value, int userValue) {
         this.isGiven = isGiven;
         this.value = value;
@@ -58,6 +63,8 @@ public class Cell implements Writable{
         this.isGiven = value;
     }
 
+
+    //EFFECTS: returns Json Object for Cell 
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
