@@ -3,7 +3,6 @@ package ui;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -132,27 +131,68 @@ public class SudokuApp {
         });
 
         button2.addActionListener(e -> {
-            Object[] options = {"Easy (60 clues)", "Medium (50 clues)", "Hard (40 clues)"};
-            int choice = JOptionPane.showOptionDialog(
-                null,
-                "Choose an option:",
-                "Custom Option Dialog",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.INFORMATION_MESSAGE,
-                null,
-                options,
-                options[0]
-            );
-            
-            if (choice >= 0) {
-                JOptionPane.showMessageDialog(null, "You selected: " + options[choice]);
+            if (user == null) {
+                JOptionPane.showMessageDialog(new JFrame(), "Create a new user first");
+            } else {
+                Object[] options = { "Easy (60 clues)", "Medium (50 clues)", "Hard (40 clues)" };
+                int choice = JOptionPane.showOptionDialog(
+                        null,
+                        "Choose an option:",
+                        "Custom Option Dialog",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        options,
+                        options[0]);
+
+                if (choice >= 0) {
+                    JOptionPane.showMessageDialog(null, "You selected: " + options[choice]);
+                }
+                int clue = 0;
+
+                if (choice == 0) {
+                    clue = 40;
+                } else if (choice == 1) {
+                    clue = 50;
+                } else if (choice == 2) {
+                    clue = 60;
+                }
+
+                user.generateNewGame(clue);
             }
 
-            
         });
 
         button3.addActionListener(e -> {
-            System.out.println("ssss");
+            if (user == null) {
+                JOptionPane.showMessageDialog(new JFrame(), "Create a new user first");
+            } else if (user.getNumOfGames() == 0) {
+                JOptionPane.showMessageDialog(new JFrame(), "There is no game");
+            } else {
+                JPanel messagePanel = new JPanel();
+                messagePanel.setLayout(new BoxLayout(messagePanel, BoxLayout.Y_AXIS));
+        
+                JLabel messageLabel = new JLabel("Choose an option:");
+                messageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
+                List<Game> list = user.getGameList();
+                Dimension buttonSize = new Dimension(150, 30);
+
+                messagePanel.add(Box.createVerticalStrut(10));
+                messagePanel.add(messageLabel);
+                messagePanel.add(Box.createVerticalStrut(15));
+
+                for (int i=0; i< list.size(); i++) {
+                    JButton gameButton = new JButton("Game "+ (i+1));
+                    gameButton.setMaximumSize(buttonSize);
+                    gameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    messagePanel.add(gameButton);
+                    messagePanel.add(Box.createVerticalStrut(10));
+                }    
+                // Create the JOptionPane
+                JOptionPane.showMessageDialog(null, messagePanel, "Custom Option Dialog", JOptionPane.PLAIN_MESSAGE);
+
+            }
         });
 
         button4.addActionListener(e -> {
@@ -170,6 +210,10 @@ public class SudokuApp {
         frame.setSize(400, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+
+    public void loadGame() {
+        
     }
 
     // EFFECTS: displays menu of options to user
