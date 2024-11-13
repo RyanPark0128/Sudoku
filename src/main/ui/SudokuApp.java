@@ -54,6 +54,12 @@ public class SudokuApp {
         panel.add(Box.createVerticalStrut(30));
         panel.add(label);
         panel.add(Box.createVerticalStrut(30));
+        if (user != null) {
+            JLabel label2 = new JLabel("Welcome "+ user.getName());
+            panel.add(label2);
+            panel.add(Box.createVerticalStrut(30));
+            label2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        }
         panel.add(button);
         panel.add(Box.createVerticalStrut(10));
         panel.add(button1);
@@ -65,6 +71,79 @@ public class SudokuApp {
         panel.add(button4);
         panel.add(Box.createVerticalStrut(10));
         panel.add(button5);
+
+        // event handler
+        button.addActionListener(e -> {
+            JFrame infoFrame = new JFrame();
+            JPanel panel1 = new JPanel();
+            JTextField tf = new JTextField();
+            JButton bt1 = new JButton("Submit");
+
+            panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
+            tf.setSize(150,20);
+            
+            String ph = "Enter your name";
+            tf.setText(ph);
+            tf.setForeground(Color.GRAY);
+
+            tf.addFocusListener(new FocusListener() {
+                @Override
+                public void focusGained(FocusEvent e) {
+                    if (tf.getText().equals(ph)) {
+                        tf.setText("");
+                        tf.setForeground(Color.BLACK);
+                    }
+                }
+    
+                @Override
+                public void focusLost(FocusEvent e) {
+                    if (tf.getText().isEmpty()) {
+                        tf.setForeground(Color.GRAY);
+                        tf.setText(ph);
+                    }
+                }
+            });
+
+            bt1.addActionListener(f -> {
+                this.user = new User(tf.getText());
+                infoFrame.dispose();
+                frame.dispose();
+                runSudoku();
+            });
+
+            panel1.add(tf);
+            panel1.add(bt1);
+            infoFrame.add(panel1);
+            infoFrame.setSize(200, 60);
+            infoFrame.setVisible(true);
+
+            SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    bt1.requestFocusInWindow();
+                }
+            });
+        });
+
+        button1.addActionListener(e -> {
+            System.out.println("ssss");
+        });
+
+        button2.addActionListener(e -> {
+            System.out.println("ssss");
+        });
+
+        button3.addActionListener(e -> {
+            System.out.println("ssss");
+        });
+
+        button4.addActionListener(e -> {
+            System.out.println("ssss");
+        });
+
+        button5.addActionListener(e -> {
+            System.out.println("ssss");
+        });
+
 
         // Add the panel to the frame
         frame.add(panel);
