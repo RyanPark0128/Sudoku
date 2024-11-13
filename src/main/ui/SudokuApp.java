@@ -56,7 +56,7 @@ public class SudokuApp {
         panel.add(label);
         panel.add(Box.createVerticalStrut(30));
         if (user != null) {
-            JLabel label2 = new JLabel("Welcome "+ user.getName());
+            JLabel label2 = new JLabel("Welcome " + user.getName());
             panel.add(label2);
             panel.add(Box.createVerticalStrut(30));
             label2.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -81,8 +81,8 @@ public class SudokuApp {
             JButton bt1 = new JButton("Submit");
 
             panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
-            tf.setSize(150,20);
-            
+            tf.setSize(150, 20);
+
             String ph = "Enter your name";
             tf.setText(ph);
             tf.setForeground(Color.GRAY);
@@ -95,7 +95,7 @@ public class SudokuApp {
                         tf.setForeground(Color.BLACK);
                     }
                 }
-    
+
                 @Override
                 public void focusLost(FocusEvent e) {
                     if (tf.getText().isEmpty()) {
@@ -132,7 +132,23 @@ public class SudokuApp {
         });
 
         button2.addActionListener(e -> {
-            System.out.println("ssss");
+            Object[] options = {"Easy (60 clues)", "Medium (50 clues)", "Hard (40 clues)"};
+            int choice = JOptionPane.showOptionDialog(
+                null,
+                "Choose an option:",
+                "Custom Option Dialog",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                options,
+                options[0]
+            );
+            
+            if (choice >= 0) {
+                JOptionPane.showMessageDialog(null, "You selected: " + options[choice]);
+            }
+
+            
         });
 
         button3.addActionListener(e -> {
@@ -140,13 +156,12 @@ public class SudokuApp {
         });
 
         button4.addActionListener(e -> {
-            System.out.println("ssss");
+            saveUser();
         });
 
         button5.addActionListener(e -> {
-            System.out.println("ssss");
+            frame.dispose();
         });
-
 
         // Add the panel to the frame
         frame.add(panel);
@@ -263,7 +278,7 @@ public class SudokuApp {
             jsonWriter.open();
             jsonWriter.write(user);
             jsonWriter.close();
-            System.out.println("Saved " + user.getName() + " to " + JSON_STORE);
+            JOptionPane.showMessageDialog(new JFrame(), "Successfuly saved user " + user.getName());
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
@@ -274,7 +289,7 @@ public class SudokuApp {
     private void loadUser() {
         try {
             user = jsonReader.read();
-            JOptionPane.showMessageDialog(new JFrame(),"Successfuly loaded user " + user.getName());
+            JOptionPane.showMessageDialog(new JFrame(), "Successfuly loaded user " + user.getName());
 
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
