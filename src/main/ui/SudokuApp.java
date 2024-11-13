@@ -16,13 +16,14 @@ import persistence.JsonWriter;
 // represents the sudoku application
 public class SudokuApp {
     private static final String JSON_STORE = "./data/sudoku.json";
-    private Scanner input;
     private User user;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
+        jsonReader = new JsonReader(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
         runSudoku();
     }
 
@@ -125,7 +126,9 @@ public class SudokuApp {
         });
 
         button1.addActionListener(e -> {
-            System.out.println("ssss");
+            loadUser();
+            frame.dispose();
+            runSudoku();
         });
 
         button2.addActionListener(e -> {
@@ -271,7 +274,8 @@ public class SudokuApp {
     private void loadUser() {
         try {
             user = jsonReader.read();
-            System.out.println("Loaded " + user.getName() + " from " + JSON_STORE);
+            JOptionPane.showMessageDialog(new JFrame(),"Successfuly loaded user " + user.getName());
+
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
