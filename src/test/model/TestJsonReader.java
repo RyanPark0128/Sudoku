@@ -6,7 +6,6 @@ import persistence.JsonReader;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class TestJsonReader {
     @Test
     void testReaderNonExistentFile() {

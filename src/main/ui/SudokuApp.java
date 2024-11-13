@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 import model.*;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -19,94 +23,118 @@ public class SudokuApp {
 
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
-        input = new Scanner(System.in);
-        user = null;
-        jsonWriter = new JsonWriter(JSON_STORE);
-        jsonReader = new JsonReader(JSON_STORE);
         runSudoku();
     }
 
     // MODIFIES: this
     // EFFECTS: processes user input
     private void runSudoku() {
-        boolean keepGoing = true;
-        String command = null;
-        input = new Scanner(System.in);
+        JFrame frame = new JFrame();
+        JButton button = new JButton("New User");
+        JButton button1 = new JButton("Load User");
+        JButton button2 = new JButton("New Game");
+        JButton button3 = new JButton("Load Game");
+        JButton button4 = new JButton("Save");
+        JButton button5 = new JButton("Quit");
+        JPanel panel = new JPanel();
+        JLabel label = new JLabel("Welcome to Sudoku game");
 
-        while (keepGoing) {
-            displayMenu();
-            command = input.next();
-            command = command.toLowerCase();
+        // Set the layout manager to arrange components vertically
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-            if (command.equals("6")) {
-                keepGoing = false;
-            } else {
-                processCommand(command);
-            }
-        }
+        label.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button3.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button4.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button5.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        System.out.println("\nGoodbye!");
+        // Add components to the panel
+        panel.add(Box.createVerticalStrut(30));
+        panel.add(label);
+        panel.add(Box.createVerticalStrut(30));
+        panel.add(button);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(button1);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(button2);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(button3);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(button4);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(button5);
+
+        // Add the panel to the frame
+        frame.add(panel);
+
+        // Set frame properties
+        frame.setSize(400, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 
     // EFFECTS: displays menu of options to user
     public void displayMenu() {
-        System.out.println("\nSelect from:");
-        System.out.println("\t1 -> Create new user");
-        System.out.println("\t2 -> Load existing user");
-        System.out.println("\t3 -> Start a new game");
-        System.out.println("\t4 -> Load list of games to play");
-        System.out.println("\t5 -> Save progress");
-        System.out.println("\t6 -> quit");
+        // System.out.println("\nSelect from:");
+        // System.out.println("\t1 -> Create new user");
+        // System.out.println("\t2 -> Load existing user");
+        // System.out.println("\t3 -> Start a new game");
+        // System.out.println("\t4 -> Load list of games to play");
+        // System.out.println("\t5 -> Save progress");
+        // System.out.println("\t6 -> quit");
     }
 
     // MODIFIES: this
     // EFFECTS: processes user command
     @SuppressWarnings("methodlength")
     private void processCommand(String command) {
-        if (command.equals("1")) {
-            System.out.println("Enter your name: \n");
-            input.nextLine();
-            user = new User(input.nextLine());
-        } else if (command.equals("2")) {
-            loadUser();
-            if (user == null) {
-                System.out.println("No user to load");
-            } else {
-                System.out.println("User " + user.getName() + " loaded");
-            }
-        } else if (command.equals("3")) {
-            if (user == null) {
-                System.out.println("Create user first");
-            } else {
-                System.out.println("Enter # of clues: \n");
-                Game newGame = new Game(input.nextInt());
-                user.addGame(newGame);
-                playGame(newGame);
-            }
-        } else if (command.equals("4")) {
-            if (user == null) {
-                System.out.println("Create user first");
-            } else {
-                List<Game> gl = user.getGameList();
-                if (gl.size() > 0) {
-                    for (int i = 0; i < gl.size(); i++) {
-                        System.out.println(
-                                (i + 1) + ") Game " + (i + 1) + "\n\t\t clues: " + gl.get(i).getNumOfClues()
-                                        + "\n\t\t hintLeft: " + gl.get(i).getHintLeft() + "\n\t\t timeElapesd: "
-                                        + gl.get(i).getTime() + "\n");
-                    }
-                    System.out.println("Which game do you want to load (" + (1) + " ~ " + (gl.size()) + ")" + ": ");
-                    playGame(gl.get(input.nextInt() - 1));
-                } else {
-                    System.out.println("No game available to load");
-                }
-            }
+        // if (command.equals("1")) {
+        // System.out.println("Enter your name: \n");
+        // input.nextLine();
+        // user = new User(input.nextLine());
+        // } else if (command.equals("2")) {
+        // loadUser();
+        // if (user == null) {
+        // System.out.println("No user to load");
+        // } else {
+        // System.out.println("User " + user.getName() + " loaded");
+        // }
+        // } else if (command.equals("3")) {
+        // if (user == null) {
+        // System.out.println("Create user first");
+        // } else {
+        // System.out.println("Enter # of clues: \n");
+        // Game newGame = new Game(input.nextInt());
+        // user.addGame(newGame);
+        // playGame(newGame);
+        // }
+        // } else if (command.equals("4")) {
+        // if (user == null) {
+        // System.out.println("Create user first");
+        // } else {
+        // List<Game> gl = user.getGameList();
+        // if (gl.size() > 0) {
+        // for (int i = 0; i < gl.size(); i++) {
+        // System.out.println(
+        // (i + 1) + ") Game " + (i + 1) + "\n\t\t clues: " + gl.get(i).getNumOfClues()
+        // + "\n\t\t hintLeft: " + gl.get(i).getHintLeft() + "\n\t\t timeElapesd: "
+        // + gl.get(i).getTime() + "\n");
+        // }
+        // System.out.println("Which game do you want to load (" + (1) + " ~ " +
+        // (gl.size()) + ")" + ": ");
+        // playGame(gl.get(input.nextInt() - 1));
+        // } else {
+        // System.out.println("No game available to load");
+        // }
+        // }
 
-        } else if (command.equals("5")) {
-            saveUser();
-        } else {
-            System.out.println("Selection not valid...");
-        }
+        // } else if (command.equals("5")) {
+        // saveUser();
+        // } else {
+        // System.out.println("Selection not valid...");
+        // }
     }
 
     // REQUIRES: Correctly instantiated Game object
@@ -114,37 +142,37 @@ public class SudokuApp {
     // EFFECTS: processes user command
     @SuppressWarnings("methodlength")
     public void playGame(Game g) {
-        boolean keepGoing = true;
-        String command = null;
+        // boolean keepGoing = true;
+        // String command = null;
 
-        while (keepGoing) {
-            printUserMatrix(g.getMatrix().getGameboard());
-            System.out.println("1 -> use hint");
-            System.out.println("2 -> submit answer");
-            System.out.println("3 -> show answers");
-            System.out.println("4 -> Back to main menu");
-            command = input.next();
-            command = command.toLowerCase();
+        // while (keepGoing) {
+        // printUserMatrix(g.getMatrix().getGameboard());
+        // System.out.println("1 -> use hint");
+        // System.out.println("2 -> submit answer");
+        // System.out.println("3 -> show answers");
+        // System.out.println("4 -> Back to main menu");
+        // command = input.next();
+        // command = command.toLowerCase();
 
-            if (command.equals("4")) {
-                keepGoing = false;
-            } else if (command.equals("1")) {
-                if (g.getHintLeft() > 0) {
-                    g.useHint();
-                } else {
-                    System.out.println("No more hint left");
-                }
-            } else if (command.equals("2")) {
-                if (!g.getMatrix().checkAnswer()) {
-                    System.out.println("Your answer to the matrix is wrong");
-                } else {
-                    System.out.println("Congrats! you solved the sudoku puzzle");
-                }
+        // if (command.equals("4")) {
+        // keepGoing = false;
+        // } else if (command.equals("1")) {
+        // if (g.getHintLeft() > 0) {
+        // g.useHint();
+        // } else {
+        // System.out.println("No more hint left");
+        // }
+        // } else if (command.equals("2")) {
+        // if (!g.getMatrix().checkAnswer()) {
+        // System.out.println("Your answer to the matrix is wrong");
+        // } else {
+        // System.out.println("Congrats! you solved the sudoku puzzle");
+        // }
 
-            } else if (command.equals("3")) {
-                printMatrix(g.getMatrix().getGameboard());
-            }
-        }
+        // } else if (command.equals("3")) {
+        // printMatrix(g.getMatrix().getGameboard());
+        // }
+        // }
     }
 
     // EFFECTS: saves the user to file
