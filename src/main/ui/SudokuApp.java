@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.DocumentEvent;
 import javax.swing.text.AbstractDocument;
 
 import model.*;
@@ -272,8 +274,26 @@ public class SudokuApp {
                             cell.setText(String.valueOf(matrix.get(cellRow).get(cellCol).getValue()));
                             cell.setEditable(false);
                             cell.setForeground(Color.GRAY);
-                        }
+                        } else {
+                            cell.getDocument().addDocumentListener(new DocumentListener() {
+                                @Override
+                                public void insertUpdate(DocumentEvent e) {
+                                    changedUpdate(e);
+                                }
 
+                                @Override
+                                public void removeUpdate(DocumentEvent e) {
+                                    changedUpdate(e);
+                                }
+
+                                @Override
+                                public void changedUpdate(DocumentEvent e) {
+                                    if (cell.getText().matches("^[1-9]$")) {
+                                        matrix.get(cellRow).get(cellCol).setUserValue(Integer.parseInt(cell.getText()));
+                                    }
+                                }
+                            });
+                        }
                         // Set the custom DocumentFilter for Sudoku cells
                         ((AbstractDocument) cell.getDocument()).setDocumentFilter(new SudokuCellDocumentFilter());
 
@@ -311,7 +331,6 @@ public class SudokuApp {
             hintButton.setEnabled(false);
         }
 
-
         hintButton.addActionListener(e -> {
             g.getMatrix().generateUserMatrix(5);
             g.useHint();
@@ -321,14 +340,20 @@ public class SudokuApp {
         });
 
         solutionButton.addActionListener(e -> {
-
+            if (g.getMatrix().checkAnswer()) {
+                JOptionPane.showMessageDialog(new JFrame(), "Your answer is correct!");
+                f.dispose();
+                timer.stop();
+                loadGame(g);
+            } else {
+                JOptionPane.showMessageDialog(new JFrame(), "Your answer is incorrect, try again");
+            }
         });
 
         quitButton.addActionListener(e -> {
             timer.stop();
             f.dispose();
         });
-        
 
         // Add labels to sidebar
         sidebarPanel.add(hintsLabel);
@@ -345,8 +370,6 @@ public class SudokuApp {
         sidebarPanel.add(Box.createVerticalStrut(10));
         sidebarPanel.add(Box.createVerticalGlue());
 
-
-
         return sidebarPanel;
     }
 
@@ -356,7 +379,7 @@ public class SudokuApp {
             public void actionPerformed(ActionEvent e) {
                 int time = g.getTime();
                 g.setTime(++time);
-                int minutes = time/ 60;
+                int minutes = time / 60;
                 int seconds = time % 60;
                 String timeString = String.format("Time Elapsed: %02d:%02d", minutes,
                         seconds);
