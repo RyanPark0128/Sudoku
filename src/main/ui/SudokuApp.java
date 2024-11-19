@@ -80,6 +80,7 @@ public class SudokuApp {
 
         // event handler
         button.addActionListener(e -> {
+            frame.dispose();
             JFrame infoFrame = new JFrame();
             JPanel panel1 = new JPanel();
             JTextField tf = new JTextField();
@@ -113,7 +114,6 @@ public class SudokuApp {
             bt1.addActionListener(f -> {
                 this.user = new User(tf.getText());
                 infoFrame.dispose();
-                frame.dispose();
                 runSudoku();
             });
 
@@ -131,8 +131,8 @@ public class SudokuApp {
         });
 
         button1.addActionListener(e -> {
-            loadUser();
             frame.dispose();
+            loadUser();
             runSudoku();
         });
 
@@ -140,6 +140,7 @@ public class SudokuApp {
             if (user == null) {
                 JOptionPane.showMessageDialog(new JFrame(), "Create a new user first");
             } else {
+                frame.dispose();
                 Object[] options = { "Easy (60 clues)", "Medium (50 clues)", "Hard (40 clues)" };
                 int choice = JOptionPane.showOptionDialog(
                         null,
@@ -177,6 +178,8 @@ public class SudokuApp {
             } else if (user.getNumOfGames() == 0) {
                 JOptionPane.showMessageDialog(new JFrame(), "There is no game");
             } else {
+                frame.dispose();
+                JFrame gamelist = new JFrame();
                 JPanel messagePanel = new JPanel();
                 messagePanel.setLayout(new BoxLayout(messagePanel, BoxLayout.Y_AXIS));
 
@@ -189,6 +192,7 @@ public class SudokuApp {
                 messagePanel.add(Box.createVerticalStrut(10));
                 messagePanel.add(messageLabel);
                 messagePanel.add(Box.createVerticalStrut(15));
+                gamelist.add(messagePanel);
 
                 for (int i = 0; i < list.size(); i++) {
                     Game cGame = list.get(i);
@@ -199,14 +203,17 @@ public class SudokuApp {
                     gameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
                     gameButton.addActionListener(f -> {
                         loadGame(cGame);
-
+                        gamelist.dispose();
                     });
                     messagePanel.add(gameButton);
                     messagePanel.add(Box.createVerticalStrut(10));
                 }
-                // Create the JOptionPane
-                JOptionPane.showMessageDialog(null, messagePanel, "Custom Option Dialog", JOptionPane.PLAIN_MESSAGE);
 
+                JDialog dialog = new JDialog(gamelist, "Custom Option Dialog", true);
+                dialog.setContentPane(messagePanel);
+                dialog.pack();
+                dialog.setLocationRelativeTo(gamelist);
+                dialog.setVisible(true);
             }
         });
 
@@ -223,7 +230,7 @@ public class SudokuApp {
 
         // Set frame properties
         frame.setSize(400, 500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 
@@ -320,7 +327,7 @@ public class SudokuApp {
         JLabel difficultyLabel = new JLabel("Difficulty: ");
         difficultyLabel.setFont(new Font("SansSerif", Font.PLAIN, 16));
 
-        timeLabel = new JLabel("Time Elapsed: " + g.getTime());
+        timeLabel = new JLabel(formatTime(g.getTime() / 60, g.getTime() % 60));
         timeLabel.setFont(new Font("SansSerif", Font.PLAIN, 16));
 
         JButton hintButton = new JButton("Use Hint");
@@ -353,6 +360,7 @@ public class SudokuApp {
         quitButton.addActionListener(e -> {
             timer.stop();
             f.dispose();
+            runSudoku();
         });
 
         // Add labels to sidebar
@@ -379,14 +387,14 @@ public class SudokuApp {
             public void actionPerformed(ActionEvent e) {
                 int time = g.getTime();
                 g.setTime(++time);
-                int minutes = time / 60;
-                int seconds = time % 60;
-                String timeString = String.format("Time Elapsed: %02d:%02d", minutes,
-                        seconds);
-                timeLabel.setText(timeString);
+                timeLabel.setText(formatTime(time / 60, time % 60));
             }
         });
         timer.start();
+    }
+
+    public String formatTime(int min, int sec) {
+        return String.format("Time Elapsed: %02d:%02d", min, sec);
     }
 
     // EFFECTS: displays menu of options to user
