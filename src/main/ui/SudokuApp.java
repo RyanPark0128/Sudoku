@@ -7,6 +7,8 @@ import java.util.List;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.text.AbstractDocument;
 
 import model.*;
 import persistence.JsonReader;
@@ -18,6 +20,8 @@ public class SudokuApp {
     private User user;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
+    private JLabel timeLabel;
+    private Timer timer;
 
     // EFFECTS: constructs user and runs application
     public SudokuApp() throws FileNotFoundException {
@@ -158,7 +162,9 @@ public class SudokuApp {
                     clue = 60;
                 }
 
-                user.generateNewGame(clue);
+                Game g = new Game(clue);
+                user.addGame(g);
+                loadGame(g);
             }
 
         });
@@ -171,24 +177,31 @@ public class SudokuApp {
             } else {
                 JPanel messagePanel = new JPanel();
                 messagePanel.setLayout(new BoxLayout(messagePanel, BoxLayout.Y_AXIS));
-        
+
                 JLabel messageLabel = new JLabel("Choose an option:");
                 messageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        
+
                 List<Game> list = user.getGameList();
-                Dimension buttonSize = new Dimension(150, 30);
+                Dimension buttonSize = new Dimension(400, 30);
 
                 messagePanel.add(Box.createVerticalStrut(10));
                 messagePanel.add(messageLabel);
                 messagePanel.add(Box.createVerticalStrut(15));
 
-                for (int i=0; i< list.size(); i++) {
-                    JButton gameButton = new JButton("Game "+ (i+1));
+                for (int i = 0; i < list.size(); i++) {
+                    Game cGame = list.get(i);
+                    JButton gameButton = new JButton(
+                            "Game " + (i + 1) + "  clues:" + cGame.getNumOfClues() + ", time:"
+                                    + cGame.getTime() + ", hint:" + cGame.getHintLeft());
                     gameButton.setMaximumSize(buttonSize);
                     gameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    gameButton.addActionListener(f -> {
+                        loadGame(cGame);
+
+                    });
                     messagePanel.add(gameButton);
                     messagePanel.add(Box.createVerticalStrut(10));
-                }    
+                }
                 // Create the JOptionPane
                 JOptionPane.showMessageDialog(null, messagePanel, "Custom Option Dialog", JOptionPane.PLAIN_MESSAGE);
 
@@ -212,8 +225,145 @@ public class SudokuApp {
         frame.setVisible(true);
     }
 
-    public void loadGame() {
+    public void loadGame(Game g) {
+        JFrame frame = new JFrame("Sudoku Game");
+        JPanel sudokuPanel = createSudokuPanel(g.getMatrix().getGameboard());
+        JPanel sidebarPanel = createSidebarPanel(g, frame);
+        frame.setSize(900, 900);
+        frame.add(sudokuPanel, BorderLayout.CENTER);
+        frame.add(sidebarPanel, BorderLayout.EAST);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        startTimer(g);
+    }
+
+    private JPanel createSudokuPanel(List<List<Cell>> matrix) {
+        int GRID_SIZE = 9;
+        int SUBGRID_SIZE = 3;
+        JPanel sudokuPanel = new JPanel();
+        sudokuPanel.setLayout(new GridLayout(SUBGRID_SIZE, SUBGRID_SIZE));
+
+        // Create borders for the subgrids
+        Border thickBorder = BorderFactory.createLineBorder(Color.BLACK, 2);
+        Border thinBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
+
+        // Initialize the cells array
+        JTextField[][] cells = new JTextField[GRID_SIZE][GRID_SIZE];
+
+        // Create the subgrids and cells
+        for (int row = 0; row < SUBGRID_SIZE; row++) {
+            for (int col = 0; col < SUBGRID_SIZE; col++) {
+                // Create a panel for each 3x3 subgrid
+                JPanel subgridPanel = new JPanel(new GridLayout(SUBGRID_SIZE, SUBGRID_SIZE));
+                subgridPanel.setBorder(thickBorder);
+
+                // Add cells to the subgrid
+                for (int i = 0; i < SUBGRID_SIZE; i++) {
+                    for (int j = 0; j < SUBGRID_SIZE; j++) {
+                        int cellRow = row * SUBGRID_SIZE + i;
+                        int cellCol = col * SUBGRID_SIZE + j;
+
+                        JTextField cell = new JTextField();
+                        cell.setHorizontalAlignment(JTextField.CENTER);
+                        cell.setFont(new Font("SansSerif", Font.BOLD, 20));
+                        cell.setBorder(thinBorder);
+
+                        if (matrix.get(cellRow).get(cellCol).isGiven()) {
+                            cell.setText(String.valueOf(matrix.get(cellRow).get(cellCol).getValue()));
+                            cell.setEditable(false);
+                            cell.setForeground(Color.GRAY);
+                        }
+
+                        // Set the custom DocumentFilter for Sudoku cells
+                        ((AbstractDocument) cell.getDocument()).setDocumentFilter(new SudokuCellDocumentFilter());
+
+                        cells[cellRow][cellCol] = cell;
+                        subgridPanel.add(cell);
+                    }
+                }
+                sudokuPanel.add(subgridPanel);
+            }
+        }
+
+        return sudokuPanel;
+    }
+
+    private JPanel createSidebarPanel(Game g, JFrame f) {
+        JPanel sidebarPanel = new JPanel();
+        sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.Y_AXIS));
+        sidebarPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        // Labels
+        JLabel hintsLabel = new JLabel("Hints Left: " + g.getHintLeft());
+        hintsLabel.setFont(new Font("SansSerif", Font.PLAIN, 16));
+
+        JLabel difficultyLabel = new JLabel("Difficulty: ");
+        difficultyLabel.setFont(new Font("SansSerif", Font.PLAIN, 16));
+
+        timeLabel = new JLabel("Time Elapsed: " + g.getTime());
+        timeLabel.setFont(new Font("SansSerif", Font.PLAIN, 16));
+
+        JButton hintButton = new JButton("Use Hint");
+        JButton solutionButton = new JButton("Submit answer");
+        JButton quitButton = new JButton("Exit");
+
+        if (g.getHintLeft() < 1) {
+            hintButton.setEnabled(false);
+        }
+
+
+        hintButton.addActionListener(e -> {
+            g.getMatrix().generateUserMatrix(5);
+            g.useHint();
+            f.dispose();
+            timer.stop();
+            loadGame(g);
+        });
+
+        solutionButton.addActionListener(e -> {
+
+        });
+
+        quitButton.addActionListener(e -> {
+            timer.stop();
+            f.dispose();
+        });
         
+
+        // Add labels to sidebar
+        sidebarPanel.add(hintsLabel);
+        sidebarPanel.add(Box.createVerticalStrut(20));
+        sidebarPanel.add(difficultyLabel);
+        sidebarPanel.add(Box.createVerticalStrut(20));
+        sidebarPanel.add(timeLabel);
+        sidebarPanel.add(Box.createVerticalStrut(50));
+        sidebarPanel.add(hintButton);
+        sidebarPanel.add(Box.createVerticalStrut(10));
+        sidebarPanel.add(solutionButton);
+        sidebarPanel.add(Box.createVerticalStrut(10));
+        sidebarPanel.add(quitButton);
+        sidebarPanel.add(Box.createVerticalStrut(10));
+        sidebarPanel.add(Box.createVerticalGlue());
+
+
+
+        return sidebarPanel;
+    }
+
+    private void startTimer(Game g) {
+        // Update the timeLabel every second
+        timer = new Timer(1000, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int time = g.getTime();
+                g.setTime(++time);
+                int minutes = time/ 60;
+                int seconds = time % 60;
+                String timeString = String.format("Time Elapsed: %02d:%02d", minutes,
+                        seconds);
+                timeLabel.setText(timeString);
+            }
+        });
+        timer.start();
     }
 
     // EFFECTS: displays menu of options to user

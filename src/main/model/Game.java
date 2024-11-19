@@ -54,6 +54,10 @@ public class Game implements Writable {
         return timeElapsed;
     }
 
+    public void setTime(int timeElapsed) {
+        this.timeElapsed = timeElapsed;
+    }
+
     public Matrix getMatrix() {
         return matrix;
     }
