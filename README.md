@@ -14,3 +14,12 @@ This project is designed for individuals who enjoy brain games and puzzle-solvin
 - I want to be able to get some hints when I get stuck.
 - I want to be able to use note functions to note potential answer for each cell.
 - I want to be able to measure time it took to solve the puzzle.
+
+
+# Instructions for End User
+- Start by creating new user/ load user from the database.
+- You can generate the first required action related to the user story "adding multiple Xs to a Y" by creating new game.
+- You can generate the second required action related to the user story "adding multiple Xs to a Y" by loading game.
+- You can locate my visual component in the main menu and the sudoku gameboard.
+- You can save the state of my application by clicking save in the main option. It will save the whole data of the user.
+- You can reload the state of my application by clicking load user in the main option. It will load all the infomation of saved user.

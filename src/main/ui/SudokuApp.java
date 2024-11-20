@@ -43,6 +43,12 @@ public class SudokuApp {
         JButton button3 = new JButton("Load Game");
         JButton button4 = new JButton("Save");
         JButton button5 = new JButton("Quit");
+
+        ImageIcon imageIcon = new ImageIcon("lib/Logo.png");
+        Image image = imageIcon.getImage();
+        Image newimg = image.getScaledInstance(60, 80, java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(newimg);
+        JLabel imgLabel = new JLabel(imageIcon);
         JPanel panel = new JPanel();
         JLabel label = new JLabel("Welcome to Sudoku game");
 
@@ -55,6 +61,7 @@ public class SudokuApp {
         button3.setAlignmentX(Component.CENTER_ALIGNMENT);
         button4.setAlignmentX(Component.CENTER_ALIGNMENT);
         button5.setAlignmentX(Component.CENTER_ALIGNMENT);
+        imgLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         panel.add(Box.createVerticalStrut(30));
         panel.add(label);
@@ -78,6 +85,8 @@ public class SudokuApp {
         panel.add(button4);
         panel.add(Box.createVerticalStrut(10));
         panel.add(button5);
+        panel.add(Box.createVerticalStrut(20));
+        panel.add(imgLabel);
 
         button.addActionListener(e -> {
             frame.dispose();
