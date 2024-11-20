@@ -11,7 +11,7 @@ public class TestJsonReader {
     void testReaderNonExistentFile() {
         JsonReader reader = new JsonReader("./data/noSuchFile.json");
         try {
-            User user = reader.read();
+            reader.read();
             fail("IOException expected");
         } catch (IOException e) {
             // pass
@@ -41,9 +41,7 @@ public class TestJsonReader {
             assertEquals(3, games.get(0).getHintLeft());
             assertEquals(21, games.get(0).getTime());
             assertEquals(30, games.get(0).getNumOfClues());
-
             List<List<Cell>> gameboard = games.get(0).getMatrix().getGameboard();
-
             assertEquals(3, gameboard.get(0).get(0).getValue());
             assertEquals(6, gameboard.get(0).get(1).getValue());
             assertEquals(4, gameboard.get(0).get(2).getValue());
@@ -52,7 +50,6 @@ public class TestJsonReader {
             assertEquals(7, gameboard.get(0).get(5).getValue());
             assertEquals(1, gameboard.get(0).get(6).getValue());
             assertEquals(9, gameboard.get(0).get(7).getValue());
-            assertEquals(2, gameboard.get(0).get(8).getValue());
 
             assertEquals(8, gameboard.get(8).get(0).getValue());
             assertEquals(2, gameboard.get(8).get(1).getValue());

@@ -63,8 +63,7 @@ public class Cell implements Writable {
         this.isGiven = value;
     }
 
-
-    //EFFECTS: returns Json Object for Cell 
+    // EFFECTS: returns Json Object for Cell
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

@@ -47,4 +47,10 @@ public class TestGame {
         testGame.changeGameStatus();
         assertEquals(false, testGame.isPlaying());
     }
+
+    @Test
+    void testTime() {
+        testGame.setTime(10);
+        assertEquals(10, testGame.getTime());
+    }
 }

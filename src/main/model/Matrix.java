@@ -186,7 +186,8 @@ public class Matrix implements Writable {
         // stub
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (!(gameboard.get(i).get(j).isGiven()) && gameboard.get(i).get(j).getValue() != gameboard.get(i).get(j).getUserValue()) {
+                if (!(gameboard.get(i).get(j).isGiven())
+                        && gameboard.get(i).get(j).getValue() != gameboard.get(i).get(j).getUserValue()) {
                     return false;
                 }
             }

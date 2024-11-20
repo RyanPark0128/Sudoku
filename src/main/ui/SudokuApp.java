@@ -34,6 +34,7 @@ public class SudokuApp {
 
     // MODIFIES: this
     // EFFECTS: processes user input
+    @SuppressWarnings("methodlength")
     private void runSudoku() {
         JFrame frame = new JFrame();
         JButton button = new JButton("New User");
@@ -122,6 +123,10 @@ public class SudokuApp {
         frame.setVisible(true);
     }
 
+    /*
+     * EFFECTS: Creates new user with given name
+     */
+    @SuppressWarnings("methodlength")
     public void newUserHandler() {
         JFrame infoFrame = new JFrame();
         JPanel panel1 = new JPanel();
@@ -172,6 +177,11 @@ public class SudokuApp {
         });
     }
 
+    /*
+     * MODIFIES: user
+     * EFFECTS: Creates new game with chosen option of clues
+     */
+    @SuppressWarnings("methodlength")
     public void newGameHandler() {
         Object[] options = { "Easy (60 clues)", "Medium (50 clues)", "Hard (40 clues)" };
         int choice = JOptionPane.showOptionDialog(
@@ -202,6 +212,11 @@ public class SudokuApp {
         loadGame(g);
     }
 
+    /*
+     * EFFECTS: Shows list of games that the user currently has , and opens them
+     * upon clicking them.
+     */
+    @SuppressWarnings("methodlength")
     public void loadGameHandler() {
         JFrame gamelist = new JFrame();
         JPanel messagePanel = new JPanel();
@@ -219,14 +234,14 @@ public class SudokuApp {
         gamelist.add(messagePanel);
 
         for (int i = 0; i < list.size(); i++) {
-            Game cGame = list.get(i);
+            Game currentGame = list.get(i);
             JButton gameButton = new JButton(
-                    "Game " + (i + 1) + "  clues:" + cGame.getNumOfClues() + ", time:"
-                            + cGame.getTime() + ", hint:" + cGame.getHintLeft());
+                    "Game " + (i + 1) + "  clues:" + currentGame.getNumOfClues() + ", time:"
+                            + currentGame.getTime() + ", hint:" + currentGame.getHintLeft());
             gameButton.setMaximumSize(buttonSize);
             gameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
             gameButton.addActionListener(f -> {
-                loadGame(cGame);
+                loadGame(currentGame);
                 gamelist.dispose();
             });
             messagePanel.add(gameButton);
@@ -240,6 +255,9 @@ public class SudokuApp {
         dialog.setVisible(true);
     }
 
+    /*
+     * EFFECTS: Opens the given game in a gameboard so that user can solve them.
+     */
     public void loadGame(Game g) {
         JFrame frame = new JFrame("Sudoku Game");
         JPanel sudokuPanel = createSudokuPanel(g.getMatrix().getGameboard());
@@ -252,26 +270,30 @@ public class SudokuApp {
         startTimer(g);
     }
 
+    /*
+     * EFFECTS: Creates the gameboard panel
+     */
+    @SuppressWarnings("methodlength")
     private JPanel createSudokuPanel(List<List<Cell>> matrix) {
-        int GRID_SIZE = 9;
-        int SUBGRID_SIZE = 3;
+        int grid = 9;
+        int subgrid = 3;
         JPanel sudokuPanel = new JPanel();
-        sudokuPanel.setLayout(new GridLayout(SUBGRID_SIZE, SUBGRID_SIZE));
+        sudokuPanel.setLayout(new GridLayout(subgrid, subgrid));
 
         Border thickBorder = BorderFactory.createLineBorder(Color.BLACK, 2);
         Border thinBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
 
-        JTextField[][] cells = new JTextField[GRID_SIZE][GRID_SIZE];
+        JTextField[][] cells = new JTextField[grid][grid];
 
-        for (int row = 0; row < SUBGRID_SIZE; row++) {
-            for (int col = 0; col < SUBGRID_SIZE; col++) {
-                JPanel subgridPanel = new JPanel(new GridLayout(SUBGRID_SIZE, SUBGRID_SIZE));
+        for (int row = 0; row < subgrid; row++) {
+            for (int col = 0; col < subgrid; col++) {
+                JPanel subgridPanel = new JPanel(new GridLayout(subgrid, subgrid));
                 subgridPanel.setBorder(thickBorder);
 
-                for (int i = 0; i < SUBGRID_SIZE; i++) {
-                    for (int j = 0; j < SUBGRID_SIZE; j++) {
-                        int cellRow = row * SUBGRID_SIZE + i;
-                        int cellCol = col * SUBGRID_SIZE + j;
+                for (int i = 0; i < subgrid; i++) {
+                    for (int j = 0; j < subgrid; j++) {
+                        int cellRow = row * subgrid + i;
+                        int cellCol = col * subgrid + j;
 
                         JTextField cell = new JTextField();
                         cell.setHorizontalAlignment(JTextField.CENTER);
@@ -316,6 +338,10 @@ public class SudokuApp {
         return sudokuPanel;
     }
 
+    /*
+     * EFFECTS: Creates the sidebar panel where it shows information about the game
+     */
+    @SuppressWarnings("methodlength")
     private JPanel createSidebarPanel(Game g, JFrame f) {
         JPanel sidebarPanel = new JPanel();
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.Y_AXIS));
@@ -380,6 +406,10 @@ public class SudokuApp {
         return sidebarPanel;
     }
 
+    /*
+     * MODIFIES: timer for each game
+     * EFFECTS: Starts the time when the game start
+     */
     private void startTimer(Game g) {
         timer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -391,6 +421,9 @@ public class SudokuApp {
         timer.start();
     }
 
+    /*
+     * EFFECTS: Helper function that returns string of formatted time
+     */
     public String formatTime(int min, int sec) {
         return String.format("Time Elapsed: %02d:%02d", min, sec);
     }
