@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class User implements Writable {
     private List<Game> list; // list of games that the user has
     private String name;
+    private EventLog eventLog;
 
     /*
      * EFFECTS: creates new user that will be playing Sudoku games
@@ -20,6 +21,8 @@ public class User implements Writable {
     public User(String name) {
         list = new ArrayList<Game>();
         this.name = name;
+        eventLog = EventLog.getInstance();
+        eventLog.logEvent(new Event("User: " + name + " logged in"));
     }
 
     public List<Game> getGameList() {
@@ -40,6 +43,7 @@ public class User implements Writable {
      */
     public void addGame(Game game) {
         list.add(game);
+        eventLog.logEvent(new Event("New game has been added to the game list"));
     }
 
     /*
@@ -49,6 +53,7 @@ public class User implements Writable {
      */
     public void generateNewGame(int clues) {
         list.add(new Game(clues));
+        eventLog.logEvent(new Event("New game has been added to the game list"));
     }
 
     /*

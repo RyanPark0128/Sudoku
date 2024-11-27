@@ -13,6 +13,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.text.AbstractDocument;
 
 import model.*;
+import model.Event;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -125,6 +126,11 @@ public class SudokuApp {
 
         button5.addActionListener(e -> {
             frame.dispose();
+            EventLog eventLog = EventLog.getInstance();
+            System.out.println("Logged events:");
+            for (Event event : eventLog) {
+                System.out.println(event);
+            }
         });
 
         frame.add(panel);
