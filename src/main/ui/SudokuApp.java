@@ -320,6 +320,10 @@ public class SudokuApp {
                             cell.setEditable(false);
                             cell.setForeground(Color.GRAY);
                         } else {
+                            if (matrix.get(cellRow).get(cellCol).getUserValue() != 0) {
+                                cell.setText(String.valueOf(matrix.get(cellRow).get(cellCol).getUserValue()));
+                            }
+
                             cell.getDocument().addDocumentListener(new DocumentListener() {
                                 @Override
                                 public void insertUpdate(DocumentEvent e) {

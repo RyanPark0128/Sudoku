@@ -26,6 +26,7 @@ public class User implements Writable {
     }
 
     public List<Game> getGameList() {
+        eventLog.logEvent(new Event("Loaded Game list"));
         return list;
     }
 
@@ -43,7 +44,7 @@ public class User implements Writable {
      */
     public void addGame(Game game) {
         list.add(game);
-        eventLog.logEvent(new Event("New game has been added to the game list"));
+        eventLog.logEvent(new Event("game has been added to the game list"));
     }
 
     /*
@@ -53,7 +54,7 @@ public class User implements Writable {
      */
     public void generateNewGame(int clues) {
         list.add(new Game(clues));
-        eventLog.logEvent(new Event("New game has been added to the game list"));
+        eventLog.logEvent(new Event("game has been added to the game list"));
     }
 
     /*

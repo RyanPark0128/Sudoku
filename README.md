@@ -23,3 +23,23 @@ This project is designed for individuals who enjoy brain games and puzzle-solvin
 - You can locate my visual component in the main menu and the sudoku gameboard.
 - You can save the state of my application by clicking save in the main option. It will save the whole data of the user.
 - You can reload the state of my application by clicking load user in the main option. It will load all the infomation of saved user.
+
+# Phase 4: Task 2
+- The system logs whenever new user is created/loaded: "User: Ryan logged in"
+- The system logs when a new game has been added to user's game list: "game has been added to the game list"
+- The system logs when it loads list of game of a user: "Loaded Game list"
+- The system logs when the sudoku gameboard is generated: "Generated new sudoku gameboard" 
+
+# Phase 4: Task 3
+- User class (association) has a field of Game class with multiplicity 0..*, and has a field of EventLog class with multiplicity 1
+- Game class (association) has a field of Matrix class with multiplicity 1.
+- Matrix (association) class has a field of Cell class with multiplicity 81 (9x9 array = 81 cells)
+- User,Game,Matrix,Cell class all implements writable interface.
+- EventLog implements Iterable and has a field of Event class with multiplicity 0..*.
+- SudokuApp class has a field of JsonWriter and JsonReader both with multiplicity 1.
+- SudokuCellDocumentFilter extends DocumentFilter.
+
+If I had more time to work on the project, I would refactor the code so that it covers more edgecases.
+At this point, the project works perfect but there are some actions that breaks the app (e.g. closing window with x button left top corner.)
+If I had more time I would implement windowclosing handler to make it better.
+Furthermore, I have long line of code in my ui package for SudokuApp Class. If I put in some more time, it can be refactored nicely.

@@ -42,6 +42,8 @@ public class Matrix implements Writable {
 
         generateMatrix(0, 0);
         generateUserMatrix(clues);
+        EventLog eventLog = EventLog.getInstance();
+        eventLog.logEvent(new Event("Generated new sudoku gameboard"));
     }
 
     /*

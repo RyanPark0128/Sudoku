@@ -1293,6 +1293,437 @@
                 ]
             ]},
             "clues": 60
+        },
+        {
+            "timeElapsed": 3,
+            "inProgress": false,
+            "hintLeft": 3,
+            "matrix": {"gameboard": [
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 2,
+                        "isGiven": false,
+                        "value": 2
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    }
+                ]
+            ]},
+            "clues": 50
         }
     ]
 }
