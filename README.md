@@ -1,45 +1,107 @@
-# My Personal Project
+# About The Project
 
-## Sudoku game
-This project is aimed at creating an interactive Sudoku game where users can generate new puzzles, solve them, and check their solutions. The application will offer different difficulty levels, allowing users to choose their preferred challenge. Once the puzzle is completed, the app will provide a feature to verify if the solution is correct, and it will also track the time taken to solve the puzzle, adding an additional layer of engagement.
+![alt text](image1.png "Title")
 
-This project is designed for individuals who enjoy brain games and puzzle-solving. It is especially appealing to those who are looking for a customizable Sudoku experience with features like difficulty settings and performance tracking. I am particularly interested in this project because it involves manipulating 2D arrays, which presents a unique challenge. Working with complex data structures in this way is both intriguing and enjoyable for me, providing an opportunity to enhance my problem-solving skills.
+I decided to make a simple, interactive Sudoku game that allows players to generate new puzzles, solve them, and track their performance. Users can select a difficulty level, request hints, and save/load their game progress at any time. This project was developed with a focus on 2D array manipulation and class associations, making it an excellent exploration of object‐oriented programming (OOP) concepts.
 
-## User Story
-- I want to be able to generate a Sudoku game that can be solved.
-- I want to be able to decide the difficulty of the Sudoku game.
-- I want to be able to check the answer after completing the game.
-- I want to be able to save the progress of the game, history of games played.
-- I want to be given the option to load my game list from file.
-- I want to be able to get some hints when I get stuck.
-- I want to be able to use note functions to note potential answer for each cell.
-- I want to be able to measure time it took to solve the puzzle.
+The project was built with Java Swing.
+
+---
+
+## Table of Contents
+
+1. [Features](#features)  
+2. [Instructions for End Users](#instructions-for-end-users)  
+3. [Class Structure (Phase 4: Task 3)](#class-structure-phase-4-task-3)  
+4. [Contact](#contact)
+
+---
+
+## Features
+
+- **Sudoku Puzzle Generation**  
+  Generate a new Sudoku game with varying difficulty levels.
+
+- **Interactive Game Board**  
+  Users can fill in cells, add notes for potential answers, and request hints.
+
+- **Performance Tracking**  
+  Tracks the time taken to solve each puzzle, providing an added layer of engagement.
+
+- **Saving and Loading Games**  
+  Allows users to save progress at any point and load previously saved games.
+
+- **Solution Validation**  
+  Users can check their solutions once they believe they have completed a puzzle.
+
+- **Logging**   
+Logs all major events during the program's execution.
 
 
-## Instructions for End User
-- Start by creating new user/ load user from the database.
-- You can generate the first required action related to the user story "adding multiple Xs to a Y" by creating new game.
-- You can generate the second required action related to the user story "adding multiple Xs to a Y" by loading game.
-- You can locate my visual component in the main menu and the sudoku gameboard.
-- You can save the state of my application by clicking save in the main option. It will save the whole data of the user.
-- You can reload the state of my application by clicking load user in the main option. It will load all the infomation of saved user.
+---
 
-## Phase 4: Task 2
-- The system logs whenever new user is created/loaded: "User: Ryan logged in"
-- The system logs when a new game has been added to user's game list: "game has been added to the game list"
-- The system logs when it loads list of game of a user: "Loaded Game list"
-- The system logs when the sudoku gameboard is generated: "Generated new sudoku gameboard" 
+## Instructions for End Users
 
-## Phase 4: Task 3
-- User class (association) has a field of Game class with multiplicity 0..*, and has a field of EventLog class with multiplicity 1
-- Game class (association) has a field of Matrix class with multiplicity 1.
-- Matrix (association) class has a field of Cell class with multiplicity 81 (9x9 array = 81 cells)
-- User,Game,Matrix,Cell class all implements writable interface.
-- EventLog implements Iterable and has a field of Event class with multiplicity 0..*.
-- SudokuApp class has a field of JsonWriter and JsonReader both with multiplicity 1.
-- SudokuCellDocumentFilter extends DocumentFilter.
+1. **Launch the Application**   
+    - Create a new user or load an existing user from the database.
 
-If I had more time to work on the project, I would refactor the code so that it covers more edgecases.
-At this point, the project works perfect but there are some actions that breaks the app (e.g. closing window with x button left top corner.)
-If I had more time I would implement windowclosing handler to make it better.
-Furthermore, I have long line of code in my ui package for SudokuApp Class. If I put in some more time, it can be refactored nicely.
+2. **Generate / Load a Game**  
+   - Use **Create New Game** to generate a fresh puzzle.  
+   - Use **Load Game** to continue playing a saved puzzle.
+
+3. **Interact with the Sudoku Board**  
+   - The Sudoku board is displayed in the main menu/game screen.  
+   - Enter numbers, and request hints if you are stuck.
+
+4. **Save Progress**  
+   - Click **Save** in the main options menu. This saves all user data (including game history).
+
+5. **Load Progress**  
+   - Click **Load User** in the main options menu. This loads saved user information and game states.
+
+6. **Check and Track**  
+   - Once the puzzle is completed, the application will verify your solution.  
+   - A timer tracks how long it takes you to solve each puzzle.
+
+---
+
+## Class Structure & UML Diagram
+
+- **User Class**  
+    - Has a field of `Game` (multiplicity `0..*`).  
+    - Has a field of `EventLog` (multiplicity `1`).  
+    - Implements `Writable` interface.
+
+- **Game Class**  
+    - Has a field of `Matrix` (multiplicity `1`).  
+    - Implements `Writable` interface.
+
+- **Matrix Class**  
+    - Has a field of `Cell` (multiplicity `81`). (A 9×9 grid for Sudoku cells)  
+    - Implements `Writable` interface.
+
+- **Cell Class**  
+    - Represents an individual Sudoku cell.  
+    - Implements `Writable` interface.
+
+- **EventLog Class**  
+    - Implements `Iterable`.  
+    - Has a field of `Event` (multiplicity `0..*`).
+
+- **Event Class**  
+    - Represents a single event in the `EventLog`.
+
+- **SudokuApp Class**  
+    - Has a field of `JsonWriter` and `JsonReader` (both with multiplicity `1`).
+
+- **SudokuCellDocumentFilter Class**  
+    - Extends `DocumentFilter` for restricting input in Sudoku cells (e.g., numeric input only).
+
+![alt text](UML_Design_Diagram.png "Title")
+
+## Contact
+
+**Author:** Ryan Park  
+**Email:** [parkryan0128@gmail.com](mailto:parkryan0128@gmail.com)  
+**LinkedIn:** [linkedin.com/in/rp0128](https://linkedin.com/in/rp0128)  
+**GitHub:** [github.com/RyanPark0128](https://github.com/RyanPark0128)
