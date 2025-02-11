@@ -16,7 +16,7 @@ This project is designed for individuals who enjoy brain games and puzzle-solvin
 - I want to be able to measure time it took to solve the puzzle.
 
 
-# Instructions for End User
+## Instructions for End User
 - Start by creating new user/ load user from the database.
 - You can generate the first required action related to the user story "adding multiple Xs to a Y" by creating new game.
 - You can generate the second required action related to the user story "adding multiple Xs to a Y" by loading game.
@@ -24,13 +24,13 @@ This project is designed for individuals who enjoy brain games and puzzle-solvin
 - You can save the state of my application by clicking save in the main option. It will save the whole data of the user.
 - You can reload the state of my application by clicking load user in the main option. It will load all the infomation of saved user.
 
-# Phase 4: Task 2
+## Phase 4: Task 2
 - The system logs whenever new user is created/loaded: "User: Ryan logged in"
 - The system logs when a new game has been added to user's game list: "game has been added to the game list"
 - The system logs when it loads list of game of a user: "Loaded Game list"
 - The system logs when the sudoku gameboard is generated: "Generated new sudoku gameboard" 
 
-# Phase 4: Task 3
+## Phase 4: Task 3
 - User class (association) has a field of Game class with multiplicity 0..*, and has a field of EventLog class with multiplicity 1
 - Game class (association) has a field of Matrix class with multiplicity 1.
 - Matrix (association) class has a field of Cell class with multiplicity 81 (9x9 array = 81 cells)

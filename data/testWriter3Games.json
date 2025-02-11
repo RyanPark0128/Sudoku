@@ -10,22 +10,22 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 1
+                        "value": 7
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 4
+                        "value": 2
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 8
+                        "value": 3
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 2
+                        "value": 8
                     },
                     {
                         "userValue": 0,
@@ -35,96 +35,7 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
                         "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 2
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
                     },
                     {
                         "userValue": 0,
@@ -139,105 +50,6 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
                         "value": 1
                     }
                 ],
@@ -249,23 +61,13 @@
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
+                        "isGiven": false,
                         "value": 6
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
+                        "isGiven": true,
                         "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 1
                     },
                     {
                         "userValue": 0,
@@ -279,8 +81,112 @@
                     },
                     {
                         "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
                         "isGiven": false,
                         "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
                     },
                     {
                         "userValue": 0,
@@ -289,6 +195,83 @@
                     }
                 ],
                 [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
                     {
                         "userValue": 0,
                         "isGiven": false,
@@ -301,13 +284,40 @@
                     },
                     {
                         "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
                         "isGiven": false,
                         "value": 5
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 6
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
                     },
                     {
                         "userValue": 0,
@@ -321,13 +331,50 @@
                     },
                     {
                         "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
                         "isGiven": false,
-                        "value": 4
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
                         "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
                     },
                     {
                         "userValue": 0,
@@ -338,33 +385,18 @@
                 [
                     {
                         "userValue": 0,
-                        "isGiven": false,
+                        "isGiven": true,
                         "value": 4
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 7
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 8
+                        "value": 9
                     },
                     {
                         "userValue": 0,
@@ -374,38 +406,16 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 5
+                        "value": 1
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
+                        "isGiven": true,
                         "value": 8
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
                         "value": 5
                     },
                     {
@@ -415,18 +425,8 @@
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
                         "isGiven": false,
                         "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
                     }
                 ]
             ]},
@@ -440,13 +440,18 @@
                 [
                     {
                         "userValue": 0,
-                        "isGiven": true,
-                        "value": 2
+                        "isGiven": false,
+                        "value": 4
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
                     },
                     {
                         "userValue": 0,
@@ -456,54 +461,12 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 7
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
                         "isGiven": true,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
+                        "value": 1
                     },
                     {
                         "userValue": 0,
@@ -518,8 +481,10 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 7
-                    },
+                        "value": 8
+                    }
+                ],
+                [
                     {
                         "userValue": 0,
                         "isGiven": true,
@@ -527,20 +492,23 @@
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
-                        "value": 6
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 3
+                        "isGiven": false,
+                        "value": 7
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 7
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
                     },
                     {
                         "userValue": 0,
@@ -550,116 +518,29 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 1
+                        "value": 5
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 6
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
+                        "value": 3
                     }
                 ],
                 [
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
+                        "isGiven": true,
                         "value": 6
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
                         "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 7
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
                     },
                     {
                         "userValue": 0,
@@ -669,43 +550,11 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 8
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 2
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
                         "isGiven": true,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
                         "value": 3
                     },
                     {
@@ -716,19 +565,7 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 1
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
+                        "value": 4
                     },
                     {
                         "userValue": 0,
@@ -738,8 +575,10 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 9
-                    },
+                        "value": 1
+                    }
+                ],
+                [
                     {
                         "userValue": 0,
                         "isGiven": false,
@@ -753,59 +592,32 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 3
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
                         "isGiven": true,
-                        "value": 1
+                        "value": 7
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
+                        "isGiven": false,
                         "value": 2
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
                     },
                     {
                         "userValue": 0,
@@ -821,6 +633,21 @@
                     },
                     {
                         "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
                         "isGiven": false,
                         "value": 5
                     },
@@ -832,17 +659,7 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 4
+                        "value": 7
                     },
                     {
                         "userValue": 0,
@@ -852,12 +669,195 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
+                        "value": 2
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
                         "value": 7
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
                         "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
                     }
                 ]
             ]},
@@ -871,37 +871,12 @@
                 [
                     {
                         "userValue": 0,
-                        "isGiven": true,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
                         "isGiven": false,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 4
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
+                        "isGiven": false,
                         "value": 2
                     },
                     {
@@ -912,66 +887,12 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 3
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
+                        "value": 8
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
                         "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
                     },
                     {
                         "userValue": 0,
@@ -985,19 +906,16 @@
                     },
                     {
                         "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
                         "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 4
-                    },
+                    }
+                ],
+                [
                     {
                         "userValue": 0,
                         "isGiven": false,
@@ -1005,77 +923,8 @@
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
-                        "value": 6
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 3
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
                         "isGiven": false,
                         "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 1
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 3
                     },
                     {
                         "userValue": 0,
@@ -1085,96 +934,59 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 1
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 3
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    }
-                ],
-                [
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 4
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
                         "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
                     },
                     {
                         "userValue": 0,
@@ -1183,50 +995,35 @@
                     },
                     {
                         "userValue": 0,
-                        "isGiven": true,
+                        "isGiven": false,
                         "value": 7
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 3
+                        "value": 4
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 5
+                        "isGiven": true,
+                        "value": 9
                     }
                 ],
                 [
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 5
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 7
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
                         "value": 3
                     },
                     {
                         "userValue": 0,
-                        "isGiven": false,
-                        "value": 8
+                        "isGiven": true,
+                        "value": 4
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 2
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
-                        "value": 9
+                        "value": 7
                     },
                     {
                         "userValue": 0,
@@ -1236,6 +1033,68 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 5
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
                         "value": 1
                     },
                     {
@@ -1248,32 +1107,27 @@
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 6
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": true,
                         "value": 1
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 4
-                    },
-                    {
-                        "userValue": 0,
-                        "isGiven": false,
                         "value": 5
                     },
                     {
                         "userValue": 0,
                         "isGiven": true,
-                        "value": 3
+                        "value": 2
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
-                        "value": 7
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
                     },
                     {
                         "userValue": 0,
@@ -1283,12 +1137,158 @@
                     {
                         "userValue": 0,
                         "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 1
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
                         "value": 8
                     },
                     {
                         "userValue": 0,
                         "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    }
+                ],
+                [
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 7
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
+                        "value": 8
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 4
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 9
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 6
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": true,
                         "value": 2
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 5
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 3
+                    },
+                    {
+                        "userValue": 0,
+                        "isGiven": false,
+                        "value": 1
                     }
                 ]
             ]},
