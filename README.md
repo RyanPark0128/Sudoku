@@ -97,6 +97,9 @@ Logs all major events during the program's execution.
 - **SudokuCellDocumentFilter Class**  
     - Extends `DocumentFilter` for restricting input in Sudoku cells (e.g., numeric input only).
 
+
+UML Design Diagram:
+
 ![alt text](UML_Design_Diagram.jpg "Title")
 
 ## Contact
